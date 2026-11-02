@@ -1,0 +1,24 @@
+# IEEE conference figure style: single column 3.5 in, Times-like serif 8 pt, vector PDF
+figure.figsize: 3.5, 2.2
+figure.dpi: 150
+savefig.format: pdf
+savefig.bbox: tight
+savefig.pad_inches: 0.02
+font.family: serif
+font.serif: Times New Roman, Times, Nimbus Roman, DejaVu Serif
+font.size: 8
+axes.titlesize: 8
+axes.labelsize: 8
+legend.fontsize: 7
+xtick.labelsize: 7
+ytick.labelsize: 7
+axes.linewidth: 0.6
+lines.linewidth: 1.0
+axes.grid: True
+grid.linewidth: 0.3
+grid.alpha: 0.5
+axes.spines.top: False
+axes.spines.right: False
+# Colour-blind-safe, grayscale-distinguishable (Okabe-Ito subset)
+axes.prop_cycle: cycler('color', ['0072B2', 'E69F00', '009E73', 'CC79A7', '56B4E9'])
+pdf.fonttype: 42
