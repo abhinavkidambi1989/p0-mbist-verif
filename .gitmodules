@@ -1,0 +1,3 @@
+[submodule "duts/tt777"]
+	path = duts/tt777
+	url = https://github.com/adityapundir1985/tt_um_aksp_mbist_mbisr

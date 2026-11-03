@@ -1,0 +1,45 @@
+=== T0 fault-free
+RESULT faults f0=(-1,0,0) f1=(-1,0,0)
+RESULT done=1 fail=0 cycles=228 fail_pulses=0
+RESULT repair[0] valid=0 addr=31
+RESULT repair[1] valid=0 addr=31
+=== T1 one stuck-at-0, addr 5 bit 0
+RESULT fail_valid t=1595000 addr=4 state=5
+RESULT faults f0=(5,0,0) f1=(-1,0,0)
+RESULT done=1 fail=1 cycles=228 fail_pulses=1
+RESULT repair[0] valid=1 addr=4
+RESULT repair[1] valid=1 addr=4
+=== T2 two stuck-at-0, addr 5 and addr 9
+RESULT fail_valid t=1515000 addr=8 state=5
+RESULT fail_valid t=1595000 addr=4 state=5
+RESULT faults f0=(5,0,0) f1=(9,3,0)
+RESULT done=1 fail=1 cycles=228 fail_pulses=2
+RESULT repair[0] valid=1 addr=8
+RESULT repair[1] valid=1 addr=8
+=== T3 stuck-at-1, addr 12 bit 7
+RESULT fail_valid t=665000 addr=13 state=3
+RESULT fail_valid t=1435000 addr=12 state=5
+RESULT fail_valid t=1965000 addr=13 state=7
+RESULT faults f0=(12,7,1) f1=(-1,0,0)
+RESULT done=1 fail=1 cycles=228 fail_pulses=3
+RESULT repair[0] valid=1 addr=13
+RESULT repair[1] valid=1 addr=13
+=== T4 fault in spare row, addr 30
+RESULT fail_valid t=1095000 addr=29 state=5
+RESULT faults f0=(30,0,0) f1=(-1,0,0)
+RESULT done=1 fail=1 cycles=228 fail_pulses=1
+RESULT repair[0] valid=1 addr=29
+RESULT repair[1] valid=1 addr=29
+=== T5 stuck-at-0, addr 0 (boundary)
+RESULT faults f0=(0,0,0) f1=(-1,0,0)
+RESULT done=1 fail=0 cycles=228 fail_pulses=0
+RESULT repair[0] valid=0 addr=31
+RESULT repair[1] valid=0 addr=31
+=== T6 stuck-at-1, addr 31 (boundary)
+RESULT fail_valid t=405000 addr=0 state=3
+RESULT fail_valid t=1705000 addr=0 state=7
+RESULT fail_valid t=1725000 addr=1 state=7
+RESULT faults f0=(31,0,1) f1=(-1,0,0)
+RESULT done=1 fail=1 cycles=228 fail_pulses=3
+RESULT repair[0] valid=1 addr=0
+RESULT repair[1] valid=1 addr=0
