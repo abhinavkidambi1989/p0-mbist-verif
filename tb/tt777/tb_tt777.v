@@ -34,6 +34,26 @@ module tb_tt777;
     if (f1a >= 0) dut.u_memory.mem_array[f1a][f1b] = f1v[0];
   end
 
+
+  // ---------------- optional waveform dump ----------------
+  // +VCD=<file> dumps the key MBIST/BISR signals (arrays copied to wires so they appear in the VCD).
+  wire [4:0] w_state     = dut.u_mbist.state;
+  wire [4:0] w_addr      = dut.u_mbist.addr;
+  wire [4:0] w_read_addr = dut.u_mbist.read_addr;
+  wire       w_read_ph   = dut.u_mbist.read_phase;
+  wire [4:0] w_mem_addr  = dut.mbisr_mem_addr;
+  wire       w_mem_we    = dut.mbisr_mem_we;
+  wire [7:0] w_rdata     = dut.mbisr_mem_rdata;
+  wire       w_fail_v    = dut.bist_fail_valid;
+  wire [4:0] w_fail_addr = dut.bist_fail_addr;
+  wire       w_rv0 = dut.u_mbisr.repair_valid[0], w_rv1 = dut.u_mbisr.repair_valid[1];
+  wire [4:0] w_rt0 = dut.u_mbisr.repair_table[0], w_rt1 = dut.u_mbisr.repair_table[1];
+  reg  [8*64-1:0] vcdname;
+  initial if ($value$plusargs("VCD=%s", vcdname)) begin
+    $dumpfile(vcdname);
+    $dumpvars(1, tb_tt777);
+  end
+
   // ---------------- monitors ----------------
   integer nfail = 0;
   always @(posedge clk)
