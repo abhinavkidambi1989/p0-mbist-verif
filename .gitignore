@@ -6,3 +6,6 @@ build/
 *.fst
 results.xml
 .DS_Store
+paper/*.aux
+paper/*.log
+paper/*.out

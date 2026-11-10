@@ -1,0 +1,295 @@
+% P0 - VTS 2027 regular paper draft (internal review copy)
+% Build: pdflatex main && pdflatex main
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{../figs/}{../results/waves/}}
+\newcommand{\tbd}[1]{\textcolor{red}{[TBD: #1]}}
+
+\begin{document}
+
+\title{Reference-Model-Driven Verification of MBIST and\\Self-Repair Logic: An Open-Source Case Study}
+
+\author{\IEEEauthorblockN{Abhinav Kidambi}
+\IEEEauthorblockA{\tbd{affiliation}\\
+\tbd{email}}}
+
+\maketitle
+
+\begin{abstract}
+Memory built-in self-test (MBIST) and built-in self-repair (BISR) logic decide whether a
+defective memory is shipped, repaired or discarded, yet their RTL is often verified only by
+checking that the test finishes and that its pass/fail flag looks plausible. This paper
+presents a reference-model-driven method that checks every observable result of an MBIST/BISR
+block (pass/fail flag, each reported fail address and the final repair table) against a golden
+operation-level March model, under systematic memory fault injection. We apply the method to
+an open-source MBIST/BISR design taped out on a public multi-project shuttle, simulating
+4{,}032 single-cell faults (stuck-at, transition and coupling) with open-source tools. The
+design's own testbench, which checks only completion, exposes none of the problems. Checking
+completion and the pass/fail flag against the golden model exposes 72 runs (2.8\% of
+detectable faults) in which a faulty memory passes. The full scoreboard flags 100\% of
+detectable faults: every reported fail address and every repair-table entry is wrong, and the
+faulty cell reaches the repair table in only 1.6\% of failing runs. A comparison with full
+March C-- also shows that the implemented shortened test detects only 50\% of inter-word
+coupling faults. All designs, testbenches and scripts are open source.
+\end{abstract}
+
+\begin{IEEEkeywords}
+MBIST, built-in self-repair, March test, memory fault models, fault injection, design verification
+\end{IEEEkeywords}
+
+\section{Introduction}
+Embedded memories dominate the area of modern SoCs, and nearly every memory instance is wrapped
+in MBIST and, increasingly, repair logic \cite{zorian2003}. A bug in this logic is costly in both
+directions: a missed fault ships a defective part, while a wrong fail address or repair entry
+wastes redundancy or ``repairs'' a good cell and leaves the bad one in use.
+
+In practice, MBIST RTL is frequently verified by running the test on a fault-free memory and
+checking that DONE rises and FAIL stays low, possibly with a few injected faults checked for
+FAIL. Such checks say little about the information that repair and diagnosis actually consume:
+\emph{which} addresses failed, and \emph{what} was written into the repair registers.
+
+This paper makes the following contributions:
+\begin{itemize}
+\item A reference-model-driven verification method for MBIST/BISR RTL that predicts, for any
+injected fault, the pass/fail flag, the ordered list of fail addresses and the repair table,
+and scores the RTL against all three (Section~\ref{sec:method}).
+\item A behavioural fault-injection testbench and campaign flow, built only on open-source
+tools, covering stuck-at (SAF), transition (TF) and idempotent coupling faults (CF).
+\item A case study on a taped-out open-source MBIST/BISR design (Section~\ref{sec:results})
+showing that completion-only and flag-only checks miss design bugs that the full scoreboard
+exposes in every detectable fault, together with root causes.
+\item \tbd{second design (row-redundancy MBIST) results and seeded-bug (mutation) campaign}
+\end{itemize}
+
+\section{Background and Related Work}
+\label{sec:background}
+\textbf{March tests and fault models.} March tests apply a sequence of March elements, each a
+series of read/write operations applied to every address in ascending ($\Uparrow$), descending
+($\Downarrow$) or either ($\Updownarrow$) order \cite{vandegoor1991,vandegoor1993}. March C--,
+$\{\Updownarrow(w0);\Uparrow(r0,w1);\Uparrow(r1,w0);\Downarrow(r0,w1);\Downarrow(r1,w0);\Updownarrow(r0)\}$,
+detects all SAFs, TFs, address-decoder faults and unlinked inter-word idempotent CFs in $10N$
+operations \cite{vandegoor1993}. Later work generated tests for linked faults \cite{vandegoor1996,alharbi2003}.
+
+\textbf{Verifying memory tests.} Van de Goor and Smit automated the verification of March
+algorithms against fault models \cite{vandegoor1994}; that work checks the \emph{algorithm},
+not the RTL that implements it. Assertion-based verification has been applied to March-based
+MBIST controllers \cite{kumar2021}, and a recent industrial methodology closes coverage gaps in
+shared-bus MBIST using physical-design-aware assertions \cite{tulsyan2026}.
+
+\textbf{Repair.} BISR stores failing addresses and remaps accesses to spare rows, columns or
+words \cite{zorian2003,sontakke2024}. Its correctness depends directly on the fail addresses
+reported by MBIST.
+
+Our method differs from these works in checking, against a golden model, every result an
+MBIST/BISR block produces (flag, every fail address, repair table) under a systematic fault
+campaign, and in being fully reproducible with open-source designs and tools.
+
+\section{Method}
+\label{sec:method}
+Fig.~\ref{fig:method} shows the flow. For each fault in a fault list, the testbench injects the
+fault into the behavioural memory, runs the MBIST to completion and records every fail report
+and the final repair table. Independently, a golden model applies the same March algorithm to
+an operation-level memory model with the same fault and predicts the correct results. A
+scoreboard compares the two and writes one row per fault.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,
+  box/.style={draw, rounded corners=1pt, align=center, minimum height=7mm, minimum width=15mm, inner sep=2pt},
+  >={Stealth[length=1.6mm]}]
+\node[box] (fl) at (0,0) {Fault list\\(SAF, TF, CF)};
+\node[box] (inj) at (2.3,0) {Fault\\injector};
+\node[box, minimum width=19mm] (dut) at (4.9,0) {DUT RTL: MBIST\\+ BISR + memory};
+\node[box] (gm) at (2.3,-1.5) {Golden\\March model};
+\node[box, minimum width=19mm] (sb) at (4.9,-1.5) {Scoreboard\\(L0 / L1 / L2)};
+\node[box, minimum width=12mm] (csv) at (7.3,-1.5) {CSV $\rightarrow$\\figures};
+\draw[->] (fl) -- (inj);
+\draw[->] (inj) -- (dut);
+\draw[->] (fl) |- (gm);
+\draw[->] (dut) -- node[right, align=left, font=\tiny] {DONE, FAIL,\\fail addrs,\\repair table} (sb);
+\draw[->] (gm) -- node[above, font=\tiny] {expected} (sb);
+\draw[->] (sb) -- (csv);
+\end{tikzpicture}
+\caption{Reference-model-driven verification flow.}
+\label{fig:method}
+\end{figure}
+
+\subsection{Golden model}
+The golden model is an operation-level simulator of a $D\times W$ memory. A March algorithm is
+a list of (order, operations) pairs. Each read compares every bit with the expected value; a
+mismatching read appends its address to the expected fail list. The expected repair table is the
+first $R$ distinct failing addresses in detection order, where $R$ is the number of repair
+entries. Spare rows are assumed fault-free and outside the tested address space, which is the
+documented intent of the case-study design. The model reproduces March theory: both the
+implemented test and full March C-- detect all 512 SAFs and 512 TFs of a $32\times8$ memory.
+
+\subsection{Fault injection}
+Faults are injected behaviourally into the RTL memory array without editing the design. A
+correction is applied 1\,ns after every clock edge, after any write has landed and before the
+next read samples the array: an SAF forces the cell to its stuck value; a TF reverts a
+forbidden $0\!\to\!1$ or $1\!\to\!0$ transition; an idempotent CF forces the victim to a value
+when the aggressor makes a given transition. The golden model implements the same semantics at
+the operation level.
+
+\subsection{Checker levels}
+To quantify what each level of checking can see, every run is scored at three levels:
+\textbf{L0}, DONE asserted (what the design's own test checks); \textbf{L1}, DONE and FAIL equal
+to the golden prediction; \textbf{L2}, the full scoreboard (FAIL, the ordered list of fail
+addresses and the repair table all equal the prediction). A run \emph{exposes a design bug} at a
+level if that level's check fails.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_wave_b1.pdf}
+\caption{B1: stuck-at-0 at address~0. The faulty read data (FE) arrives after $\Downarrow(r1,w0)$ ends and is never checked; FAIL stays low.}
+\label{fig:wave}
+\end{figure*}
+
+\section{Experimental Setup}
+\textbf{Design under test.} We use Tiny Tapeout IHP~26a project \#777 \cite{tt777}, an MBIST
+with a March C--style controller and a CAM-style BISR, at the taped-out commit (Apache-2.0).
+The RTL implements a $32\times8$ memory with two repair entries remapped to spare rows at
+addresses 30--31; the project documentation describes a $256\times8$ memory with 16 repair
+entries. The controller implements a shortened four-element test,
+$\{\Uparrow(w0);\Uparrow(r0,w1);\Downarrow(r1,w0);\Uparrow(r0)\}$, rather than the six-element
+March C--. \tbd{second DUT: row-redundancy MBIST \cite{mbistctrl}}
+
+\textbf{Fault list.} All $32\times8$ cells for SAF0/1 and TF$\uparrow$/$\downarrow$ (1{,}024
+faults), and idempotent CFs with physically adjacent aggressors (row above, row below,
+neighbouring bit in the same word), both transitions and both forced values (3{,}008 faults):
+4{,}032 single-fault runs in total.
+
+\textbf{Tools.} Icarus Verilog 12 \cite{icarus}; Python for the golden model, campaign and plots.
+The full campaign runs in 14\,s with 16 parallel simulations. The directed tests behind
+Table~\ref{tab:bugs} were also reproduced on the EDA Playground web service (Icarus Verilog 12).
+
+\section{Results}
+\label{sec:results}
+\subsection{Detection}
+Table~\ref{tab:summary} and Fig.~\ref{fig:detect} summarise detection. The golden model predicts
+that the implemented test should detect 2{,}528 of the 4{,}032 faults; the DUT raises FAIL in
+2{,}456. All 72 differences are escapes (a faulty memory passes); there are no false fails.
+
+\begin{table}[t]
+\centering
+\caption{Fault campaign on TT \#777 (single faults).}
+\label{tab:summary}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Class & Faults & Golden det. & DUT FAIL & Escapes & Correct$^\ast$ \\
+\midrule
+SAF            & 512   & 512   & 504   & 8  & 0 \\
+TF             & 512   & 512   & 496   & 16 & 0 \\
+CF inter-word  & 1{,}984 & 992 & 960   & 32 & 0 \\
+CF intra-word  & 1{,}024 & 512 & 496   & 16 & 0 \\
+\midrule
+Total          & 4{,}032 & 2{,}528 & 2{,}456 & 72 & 0 \\
+\bottomrule
+\end{tabular}
+\\[2pt]\footnotesize $^\ast$Detected runs in which every fail address and the repair table match the golden model.
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_detection.pdf}
+\caption{Fault detection by class: full March C-- and the implemented test (golden model) versus the DUT's FAIL flag.}
+\label{fig:detect}
+\end{figure}
+
+\subsection{What each checker level sees}
+Fig.~\ref{fig:checkers} shows, for the 2{,}528 detectable faults, how many runs expose a design
+bug at each level. The design's own test (L0) passes in every run. Comparing FAIL with the
+golden prediction (L1) exposes the 72 escapes, 2.8\% of detectable faults. The full scoreboard
+(L2) exposes a bug in every detectable fault: in all 2{,}456 detected runs, the fail addresses
+and the repair table differ from the prediction. Of 2{,}712 fail reports that could be paired
+with a predicted report, only 280 (10.3\%) carried the correct address; 2{,}416 were off by one.
+The faulty cell's address reached the repair table in only 40 of 2{,}456 failing runs (1.6\%),
+and in every failing run both repair entries held the same address.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_checkers.pdf}
+\caption{Detectable faults whose run exposes a design bug, by checker level.}
+\label{fig:checkers}
+\end{figure}
+
+\subsection{Root causes}
+Table~\ref{tab:bugs} lists the bugs behind these results, each reproduced in simulation (B1--B3 traced in waveforms).
+Fig.~\ref{fig:wave} shows B1: the read of address~0 in the $\Downarrow(r1,w0)$ element returns a
+faulty value, but the element has already ended when the data arrives, so it is never compared.
+
+\begin{table}[t]
+\centering
+\caption{Design bugs found in TT \#777.}
+\label{tab:bugs}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lp{3.6cm}p{2.9cm}@{}}
+\toprule
+ID & Symptom & Root cause \\
+\midrule
+B1 & Escapes at addresses 0 and 31 (72 runs) & Last read of $\Downarrow(r1,w0)$ and of final $\Uparrow(r0)$ never compared \\
+B2 & Fail address off by one & Compare uses read address after it has advanced \\
+B3 & One failure fills both repair entries & Non-blocking ``inserted'' flag read in the same cycle \\
+B4 & Second faulty cell never recorded & Table already full of duplicates (B3); seen with two injected faults \\
+B5 & Spares overlap user space & Spare rows 30--31 are also tested user addresses \\
+B6 & Docs vs.\ RTL mismatch & $256\times8$/16 entries documented; $32\times8$/2 implemented \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Algorithm adequacy}
+Independently of the RTL bugs, the golden model quantifies the cost of the shortened algorithm.
+Full March C-- detects all 1{,}984 inter-word CFs in our list; the implemented four-element test
+detects 992 (50\%), because it omits $\Uparrow(r1,w0)$ and $\Downarrow(r0,w1)$. Both detect 50\%
+of intra-word CFs, as expected for solid data backgrounds \cite{vandegoor1991}.
+
+\subsection{Second design and seeded bugs}
+\tbd{results on the row-redundancy MBIST \cite{mbistctrl}; seeded RTL-bug (mutation) campaign \cite{demillo1978} comparing L0/L1/L2}
+
+\section{Discussion and Limitations}
+The study is simulation-only and uses small open-source memories; industrial MBIST has
+programmable algorithms, multiple data backgrounds and shared controllers. Fault injection is
+behavioural and single-fault, so multi-fault repair behaviour (B4) was examined only with
+directed tests. The golden model encodes an interpretation of the design's intent (spares
+outside the tested space, repair of the first $R$ distinct failing addresses), which a
+different specification could change. The method itself is independent of these choices.
+
+\section{Conclusion}
+Checking only completion and the pass/fail flag gives false confidence in MBIST and repair
+logic. On a taped-out open-source design, a golden-model scoreboard exposed escapes, wrong fail
+addresses and a broken repair table in every detectable fault, none of which the design's own
+test detected. The designs, testbenches and scripts will be released with the paper.
+\tbd{repository link}
+
+\section*{Acknowledgment}
+\tbd{AI disclosure wording to be finalised by the author.} Portions of the text, testbench code,
+scripts and figures were drafted with the assistance of an AI system (Claude, Anthropic) and were
+reviewed, verified and revised by the author, who takes full responsibility for the content.
+
+\begin{thebibliography}{99}
+\bibitem{zorian2003} Y.~Zorian and S.~Shoukourian, ``Embedded-memory test and repair: Infrastructure IP for SoC yield,'' \emph{IEEE Design \& Test of Computers}, vol.~20, no.~3, pp.~58--66, 2003.
+\bibitem{vandegoor1991} A.~J. van de Goor, \emph{Testing Semiconductor Memories: Theory and Practice}. Chichester, U.K.: Wiley, 1991.
+\bibitem{vandegoor1993} A.~J. van de Goor, ``Using March tests to test SRAMs,'' \emph{IEEE Design \& Test of Computers}, vol.~10, no.~1, pp.~8--14, 1993.
+\bibitem{vandegoor1996} A.~J. van de Goor, G.~N. Gaydadjiev, V.~N. Yarmolik, and V.~G. Mikitjuk, ``March LR: A test for realistic linked faults,'' in \emph{Proc. IEEE VLSI Test Symp.}, 1996.
+\bibitem{alharbi2003} S.~M. Al-Harbi and S.~K. Gupta, ``Generating complete and optimal March tests for linked faults in memories,'' in \emph{Proc. IEEE VLSI Test Symp.}, 2003.
+\bibitem{vandegoor1994} A.~J. van de Goor and B.~Smit, ``Automating the verification of memory tests,'' in \emph{Proc. IEEE VLSI Test Symp.}, 1994, pp.~312--318.
+\bibitem{kumar2021} A.~Kumar, ``Assertion based functional verification of March algorithm based MBIST controller,'' arXiv:2106.11461, 2021.
+\bibitem{tulsyan2026} S.~Tulsyan \emph{et al.}, ``Physical design aware verification methodology for closing coverage gaps in SharedBus MBIST,'' 2026, IEEE Xplore doc.~11646504. \tbd{venue and pages}
+\bibitem{sontakke2024} V.~Sontakke and D.~Atchina, ``Memory built-in self-repair and correction for improving yield: A review,'' \emph{Int. J. Electrical and Computer Engineering}, vol.~14, no.~1, pp.~140--156, 2024.
+\bibitem{tt777} Tiny Tapeout, ``IHP 26a project \#777: MBIST with MBISR,'' \url{https://tinytapeout.com/chips/ttihp26a/777}. \tbd{access date}
+\bibitem{mbistctrl} D.~Annayya, ``mbist\_ctrl,'' \url{https://github.com/dineshannayya/mbist_ctrl}. \tbd{access date}
+\bibitem{icarus} S.~Williams, ``Icarus Verilog,'' \url{https://github.com/steveicarus/iverilog}.
+\bibitem{demillo1978} R.~A. DeMillo, R.~J. Lipton, and F.~G. Sayward, ``Hints on test data selection: Help for the practicing programmer,'' \emph{Computer}, vol.~11, no.~4, pp.~34--41, 1978.
+\end{thebibliography}
+
+\end{document}

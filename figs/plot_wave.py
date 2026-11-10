@@ -77,11 +77,17 @@ def fmt(v, kind):
     return str(n)
 
 
+COMPACT = ["clk", "w_state", "w_mem_addr", "w_mem_we", "w_rdata", "w_read_addr", "w_fail_v", "fail"]
+
+
 def main():
-    vcd, t0, t1, out, title = sys.argv[1], float(sys.argv[2]), float(sys.argv[3]), sys.argv[4], sys.argv[5]
-    marks = [float(m) for m in sys.argv[6:]]
+    argv = sys.argv[1:]
+    compact = "--compact" in argv
+    argv = [a for a in argv if a != "--compact"]
+    vcd, t0, t1, out, title = argv[0], float(argv[1]), float(argv[2]), argv[3], argv[4]
+    marks = [float(m) for m in argv[5:]]
     tr = parse_vcd(vcd)
-    rows = [s for s in SHOW if s[0] in tr]
+    rows = [s for s in SHOW if s[0] in tr and (not compact or s[0] in COMPACT)]
     fig, ax = plt.subplots(figsize=(7.16, 0.28 * len(rows) + 0.6))
     for i, (name, label, kind) in enumerate(rows):
         y = len(rows) - 1 - i
@@ -106,7 +112,8 @@ def main():
     ax.grid(False)
     ax.spines["left"].set_visible(False)
     ax.set_xlabel("time (ns)")
-    ax.set_title(title, fontsize=8, loc="left")
+    if title:
+        ax.set_title(title, fontsize=8, loc="left")
     plt.savefig(ROOT / f"{out}.pdf")
     plt.savefig(ROOT / f"{out}.png", dpi=200)
     print("wrote", out + ".pdf/.png")
