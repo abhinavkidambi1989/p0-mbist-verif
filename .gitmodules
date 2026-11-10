@@ -1,3 +1,6 @@
 [submodule "duts/tt777"]
 	path = duts/tt777
 	url = https://github.com/adityapundir1985/tt_um_aksp_mbist_mbisr
+[submodule "duts/mbist_ctrl"]
+	path = duts/mbist_ctrl
+	url = https://github.com/dineshannayya/mbist_ctrl
