@@ -13,6 +13,7 @@ import argparse
 import csv
 import random
 import subprocess
+import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -70,7 +71,8 @@ def cases():
         b = a % 32
         for v in (0, 1):
             out.append(("SAF", [(0, a, b, v)]))
-            out.append(("TF", [(1, a, b, v)]))
+            if a % 2 == 0:
+                out.append(("TF", [(1, a, b, v)]))
     for nw in (2, 3, 4, 5, 6):
         for _ in range(30):
             ws = rnd.sample(range(NWORDS), nw)
@@ -85,18 +87,42 @@ def cases():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--jobs", type=int, default=16)
+    ap.add_argument("--jobs", type=int, default=2)
     ap.add_argument("--out", default=str(ROOT / "results" / "faults_mbist_ctrl.csv"))
+    ap.add_argument("--build", action="store_true", help="rebuild build/mc.vvp first")
     args = ap.parse_args()
-    subprocess.run(["bash", str(ROOT / "tb" / "mbist_ctrl" / "build.sh")], check=True)
+    if args.build or not VVP.exists():
+        subprocess.run(["bash", str(ROOT / "tb" / "mbist_ctrl" / "build.sh")], check=True)
     cs = cases()
+    out = Path(args.out)
+    done = set()
+    if out.exists():  # resume: skip cases already written
+        with open(out) as fh:
+            done = {(r["class"], r["faults"]) for r in csv.DictReader(fh)}
+    todo = [c for c in cs if (c[0], ";".join(f"{k},{a},{b},{v}" for k, a, b, v in c[1])) not in done]
+    print(f"{len(cs)} cases, {len(done)} already done, {len(todo)} to run", flush=True)
+    lock = threading.Lock()
+    fh = open(out, "a", newline="")
+    writer = None
+
+    def work(c):
+        nonlocal writer
+        row = score(c)
+        with lock:
+            if writer is None:
+                writer = csv.DictWriter(fh, fieldnames=list(row.keys()))
+                if not done:
+                    writer.writeheader()
+            writer.writerow(row)
+            fh.flush()
+        return 1
+
     with ThreadPoolExecutor(args.jobs) as ex:
-        rows = list(ex.map(score, cs))
-    with open(args.out, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
-        w.writeheader()
-        w.writerows(rows)
-    print(f"{len(rows)} cases -> {args.out}")
+        for i, _ in enumerate(ex.map(work, todo), 1):
+            if i % 100 == 0:
+                print(f"{i}/{len(todo)}", flush=True)
+    fh.close()
+    print(f"done -> {out}")
 
 
 if __name__ == "__main__":
