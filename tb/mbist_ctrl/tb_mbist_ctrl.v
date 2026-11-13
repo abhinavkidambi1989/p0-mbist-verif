@@ -1,8 +1,13 @@
 // Standalone testbench for dineshannayya/mbist_ctrl (mbist_top1 + one 512x32 sky130 SRAM model),
 // wired exactly as in the chip's user_project_wrapper.v (port 0 = BIST write, port 1 = BIST read).
-// MBIST runs with its reset-default configuration (bist_en = bist_run = 1, no scan load).
-// Optional single stuck-at fault on SRAM word A, bit B, value V:  +A=<n> +B=<b> +V=<0|1>
-// The fault is applied by overriding the SRAM's stored word after every write cycle.
+// MBIST runs with its reset-default configuration (bist_en = bist_run = 1, no scan load):
+// 8 data backgrounds x 5 March stimuli over addresses 0x000-0x1FB, spares 0x1FC-0x1FF.
+//
+// Fault injection (behavioural, on the SRAM array, no RTL edits). Up to 8 faults:
+//   +N=<count>  and for i = 0..N-1:  +K<i>=<0 SAF | 1 TF>  +A<i>=<word>  +B<i>=<bit>  +V<i>=<value>
+//   SAF: bit stuck at V.   TF: the V-transition fails (V=1: 0->1 fails, V=0: 1->0 fails).
+// Corrections are applied 2 ns after each edge of the write clock (writes land on its negedge).
+// Output: RESULT lines with DONE/ERROR/CORRECT/error count and the port-A repair table.
 `timescale 1ns/100ps
 module tb_mbist_ctrl;
   reg clk = 0, rst_n = 0;
@@ -32,30 +37,54 @@ module tb_mbist_ctrl;
     .addr0(mem_addr_b), .din0(mem_din_b), .dout0(),
     .clk1(mem_clk_a), .csb1(mem_cen_a), .addr1(mem_addr_a), .dout1(mem_dout_a));
 
-  integer fa = -1, fb = 0, fv = 0;
+  // ---------------- fault injection ----------------
+  integer nf = 0, i, t, k [0:7], a [0:7], b [0:7], v [0:7];
+  reg prev [0:7];
   initial begin
-    if (!$value$plusargs("A=%d", fa)) fa = -1;
-    void'($value$plusargs("B=%d", fb));
-    void'($value$plusargs("V=%d", fv));
+    void'($value$plusargs("N=%d", nf));
+    for (i = 0; i < 8; i = i + 1) begin
+      k[i] = 0; a[i] = 0; b[i] = 0; v[i] = 0; prev[i] = 1'bx;
+    end
+    if (nf > 0) begin t=0; void'($value$plusargs("K0=%d",t)); k[0]=t; t=0; void'($value$plusargs("A0=%d",t)); a[0]=t; t=0; void'($value$plusargs("B0=%d",t)); b[0]=t; t=0; void'($value$plusargs("V0=%d",t)); v[0]=t; end
+    if (nf > 1) begin t=0; void'($value$plusargs("K1=%d",t)); k[1]=t; t=0; void'($value$plusargs("A1=%d",t)); a[1]=t; t=0; void'($value$plusargs("B1=%d",t)); b[1]=t; t=0; void'($value$plusargs("V1=%d",t)); v[1]=t; end
+    if (nf > 2) begin t=0; void'($value$plusargs("K2=%d",t)); k[2]=t; t=0; void'($value$plusargs("A2=%d",t)); a[2]=t; t=0; void'($value$plusargs("B2=%d",t)); b[2]=t; t=0; void'($value$plusargs("V2=%d",t)); v[2]=t; end
+    if (nf > 3) begin t=0; void'($value$plusargs("K3=%d",t)); k[3]=t; t=0; void'($value$plusargs("A3=%d",t)); a[3]=t; t=0; void'($value$plusargs("B3=%d",t)); b[3]=t; t=0; void'($value$plusargs("V3=%d",t)); v[3]=t; end
+    if (nf > 4) begin t=0; void'($value$plusargs("K4=%d",t)); k[4]=t; t=0; void'($value$plusargs("A4=%d",t)); a[4]=t; t=0; void'($value$plusargs("B4=%d",t)); b[4]=t; t=0; void'($value$plusargs("V4=%d",t)); v[4]=t; end
+    if (nf > 5) begin t=0; void'($value$plusargs("K5=%d",t)); k[5]=t; t=0; void'($value$plusargs("A5=%d",t)); a[5]=t; t=0; void'($value$plusargs("B5=%d",t)); b[5]=t; t=0; void'($value$plusargs("V5=%d",t)); v[5]=t; end
+    if (nf > 6) begin t=0; void'($value$plusargs("K6=%d",t)); k[6]=t; t=0; void'($value$plusargs("A6=%d",t)); a[6]=t; t=0; void'($value$plusargs("B6=%d",t)); b[6]=t; t=0; void'($value$plusargs("V6=%d",t)); v[6]=t; end
+    if (nf > 7) begin t=0; void'($value$plusargs("K7=%d",t)); k[7]=t; t=0; void'($value$plusargs("A7=%d",t)); a[7]=t; t=0; void'($value$plusargs("B7=%d",t)); b[7]=t; t=0; void'($value$plusargs("V7=%d",t)); v[7]=t; end
   end
-  // Stuck-at: keep forcing the stored bit after every edge of the write clock.
+
+  integer j;
+  reg cur;
   always @(negedge mem_clk_b or posedge mem_clk_b) begin
     #2;
-    if (fa >= 0) sram.mem[fa][fb] = fv[0];
+    for (j = 0; j < nf; j = j + 1) begin
+      cur = sram.mem[a[j]][b[j]];
+      if (k[j] == 0) sram.mem[a[j]][b[j]] = v[j][0];
+      else begin
+        if (v[j] == 1 && prev[j] === 1'b0 && cur === 1'b1) sram.mem[a[j]][b[j]] = 1'b0;
+        if (v[j] == 0 && prev[j] === 1'b1 && cur === 1'b0) sram.mem[a[j]][b[j]] = 1'b1;
+      end
+      prev[j] = sram.mem[a[j]][b[j]];
+    end
   end
 
   integer writes = 0, reads = 0;
   always @(posedge mem_clk_b) if (!mem_cen_b && !mem_web_b) writes = writes + 1;
   always @(posedge mem_clk_a) if (!mem_cen_a) reads = reads + 1;
 
-  integer cyc = 0;
+  integer cyc = 0, MAXC = 2000000, r;
+  initial void'($value$plusargs("MAXC=%d", MAXC));
   initial begin
     repeat (10) @(posedge clk); rst_n = 1;
-    while (!bist_done && cyc < 2000000) begin @(posedge clk); cyc = cyc + 1; end
+    while (!bist_done && cyc < MAXC) begin @(posedge clk); cyc = cyc + 1; end
     repeat (20) @(posedge clk);
-    $display("RESULT fault a=%0d b=%0d v=%0d", fa, fb, fv);
     $display("RESULT done %0d error %0d correct %0d errcnt %0d cycles %0d writes %0d reads %0d",
              bist_done, bist_error, bist_correct, bist_error_cnt, cyc, writes, reads);
+    $display("RESULT repcnt %0d", dut.u_mem_sel.u_repair_A.ErrorCnt);
+    for (r = 0; r < 4; r = r + 1)
+      $display("RESULT repair %0d %0d", r, dut.u_mem_sel.u_repair_A.RepairMem[r]);
     $finish;
   end
 endmodule
