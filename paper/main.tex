@@ -37,7 +37,9 @@ detectable faults) in which a faulty memory passes. The full scoreboard flags 10
 detectable faults: every reported fail address and every repair-table entry is wrong, and the
 faulty cell reaches the repair table in only 1.6\% of failing runs. A comparison with full
 March C-- also shows that the implemented shortened test detects only 50\% of inter-word
-coupling faults. All designs, testbenches and scripts are open source.
+coupling faults. On a second open-source MBIST with row-redundancy repair, the same flow reports
+no false alarms across 1{,}694 fault runs, confirming that it separates correct from defective
+repair logic. All designs, testbenches and scripts are open source.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -62,10 +64,12 @@ injected fault, the pass/fail flag, the ordered list of fail addresses and the r
 and scores the RTL against all three (Section~\ref{sec:method}).
 \item A behavioural fault-injection testbench and campaign flow, built only on open-source
 tools, covering stuck-at (SAF), transition (TF) and idempotent coupling faults (CF).
-\item A case study on a taped-out open-source MBIST/BISR design (Section~\ref{sec:results})
+\item A case study on a taped-out open-source MBIST/BISR design (Design~A, Section~\ref{sec:results})
 showing that completion-only and flag-only checks miss design bugs that the full scoreboard
 exposes in every detectable fault, together with root causes.
-\item \tbd{second design (row-redundancy MBIST) results and seeded-bug (mutation) campaign}
+\item A control study on a second open-source MBIST with row-redundancy repair (Design~B) in which
+the same scoreboard reports no false alarms over 1{,}694 runs, including multi-fault and
+faulty-spare cases. \tbd{seeded-bug (mutation) campaign}
 \end{itemize}
 
 \section{Background and Related Work}
@@ -153,21 +157,34 @@ level if that level's check fails.
 \end{figure*}
 
 \section{Experimental Setup}
-\textbf{Design under test.} We use Tiny Tapeout IHP~26a project \#777 \cite{tt777}, an MBIST
+\textbf{Design A.} We use Tiny Tapeout IHP~26a project \#777 \cite{tt777}, an MBIST
 with a March C--style controller and a CAM-style BISR, at the taped-out commit (Apache-2.0).
 The RTL implements a $32\times8$ memory with two repair entries remapped to spare rows at
 addresses 30--31; the project documentation describes a $256\times8$ memory with 16 repair
 entries. The controller implements a shortened four-element test,
 $\{\Uparrow(w0);\Uparrow(r0,w1);\Downarrow(r1,w0);\Uparrow(r0)\}$, rather than the six-element
-March C--. \tbd{second DUT: row-redundancy MBIST \cite{mbistctrl}}
+March C--.
+
+\textbf{Design B.} mbist\_ctrl \cite{mbistctrl} (Apache-2.0), an MBIST taped out on an
+Efabless/SkyWater shuttle, tests a $512\times32$ SRAM with a programmable controller: by default
+eight data backgrounds (solid, checkerboard and stripe patterns) $\times$ five March elements with
+read-after-write in both address directions, over addresses 0x000--0x1FB, with four spare words
+(0x1FC--0x1FF) and an error limit of four. We simulate the MBIST core with the SkyWater SRAM
+behavioural model, wired as on the chip; standard cells are replaced by behavioural equivalents.
+Its golden model works at the repair level: for a set $W$ of faulty user words, a correct design
+must report ERROR\,=\,0, CORRECT\,=\,1, error count $|W|$ and repair table $W$ if $|W|\le4$,
+and ERROR\,=\,1 otherwise.
 
 \textbf{Fault list.} All $32\times8$ cells for SAF0/1 and TF$\uparrow$/$\downarrow$ (1{,}024
 faults), and idempotent CFs with physically adjacent aggressors (row above, row below,
 neighbouring bit in the same word), both transitions and both forced values (3{,}008 faults):
-4{,}032 single-fault runs in total.
+4{,}032 single-fault runs in total for Design~A. For Design~B: an SAF0/1 in every one of the
+508 user words (1{,}016 runs), a TF in every second word (508), 30 random sets each of 2--6 faulty
+words (150), and a faulty spare alone or combined with 1--4 user faults (20): 1{,}694 runs.
 
 \textbf{Tools.} Icarus Verilog 12 \cite{icarus}; Python for the golden model, campaign and plots.
-The full campaign runs in 14\,s with 16 parallel simulations. The directed tests behind
+Design~A's campaign runs in 14\,s with 16 parallel simulations; a Design~B run takes about
+2\,s (162{,}563 cycles). The directed tests behind
 Table~\ref{tab:bugs} were also reproduced on the EDA Playground web service (Icarus Verilog 12).
 
 \section{Results}
@@ -212,12 +229,13 @@ golden prediction (L1) exposes the 72 escapes, 2.8\% of detectable faults. The f
 and the repair table differ from the prediction. Of 2{,}712 fail reports that could be paired
 with a predicted report, only 280 (10.3\%) carried the correct address; 2{,}416 were off by one.
 The faulty cell's address reached the repair table in only 40 of 2{,}456 failing runs (1.6\%),
-and in every failing run both repair entries held the same address.
+and in every failing run both repair entries held the same address. For Design~B, no run exposes
+a bug at any level (0 of 1{,}674 runs without spare faults).
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig_checkers.pdf}
-\caption{Detectable faults whose run exposes a design bug, by checker level.}
+\caption{Detectable fault runs that expose a design bug, by checker level, for both designs.}
 \label{fig:checkers}
 \end{figure}
 
@@ -253,14 +271,52 @@ Full March C-- detects all 1{,}984 inter-word CFs in our list; the implemented f
 detects 992 (50\%), because it omits $\Uparrow(r1,w0)$ and $\Downarrow(r0,w1)$. Both detect 50\%
 of intra-word CFs, as expected for solid data backgrounds \cite{vandegoor1991}.
 
-\subsection{Second design and seeded bugs}
-\tbd{results on the row-redundancy MBIST \cite{mbistctrl}; seeded RTL-bug (mutation) campaign \cite{demillo1978} comparing L0/L1/L2}
+\subsection{Design B: a control case}
+Table~\ref{tab:mc} summarises Design~B. Every single SAF and TF was detected, reported with
+the correct error count and repaired at the faulty word's address; sets of two to four faulty
+words were repaired exactly; and sets of five or six were correctly reported as unrepairable.
+Fig.~\ref{fig:wavemc} shows a repair: the read of word~16 returns a faulty value, the word is
+entered in the repair table, and from the next cycle its accesses go to spare word 0x1FC. A
+faulty spare that is never used has no effect; when it is used, the controller detects it,
+consumes the next repair entry for the same address, and reports ERROR only when the four
+entries run out. Code review also found a latent off-by-one in the repair counter bound
+(${\le}$ instead of ${<}$ the limit), which is unreachable because the comparator stops
+reporting errors at the limit. This null result matters: the scoreboard that flags every
+detectable fault in Design~A raises no false alarm on a well-built design.
+
+\begin{table}[t]
+\centering
+\caption{Fault campaign on Design B (mbist\_ctrl).}
+\label{tab:mc}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Case & Runs & ERROR (golden / DUT) & L2 bugs \\
+\midrule
+Single SAF (all words)       & 1{,}016 & 0 / 0   & 0 \\
+Single TF (every 2nd word)   & 508     & 0 / 0   & 0 \\
+2--4 faulty words            & 90      & 0 / 0   & 0 \\
+5--6 faulty words            & 60      & 60 / 60 & 0 \\
+Faulty spare + 0--4 faults   & 20      & -- / 4  & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_wave_mc_repair_narrow.pdf}
+\caption{Design B: stuck-at-0 in word 16 is detected (read 55555554, expected 55555555), entered in repair entry 0, and remapped to spare word 0x1FC (508) from the next access.}
+\label{fig:wavemc}
+\end{figure}
+
+\subsection{Seeded bugs}
+\tbd{seeded RTL-bug (mutation) campaign \cite{demillo1978} on both designs comparing L0/L1/L2}
 
 \section{Discussion and Limitations}
 The study is simulation-only and uses small open-source memories; industrial MBIST has
 programmable algorithms, multiple data backgrounds and shared controllers. Fault injection is
-behavioural and single-fault, so multi-fault repair behaviour (B4) was examined only with
-directed tests. The golden model encodes an interpretation of the design's intent (spares
+behavioural; for Design~A it is single-fault, so its multi-fault repair behaviour (B4) was
+examined only with directed tests, while Design~B was also run with up to six faulty words. The golden model encodes an interpretation of the design's intent (spares
 outside the tested space, repair of the first $R$ distinct failing addresses), which a
 different specification could change. The method itself is independent of these choices.
 
@@ -268,7 +324,8 @@ different specification could change. The method itself is independent of these 
 Checking only completion and the pass/fail flag gives false confidence in MBIST and repair
 logic. On a taped-out open-source design, a golden-model scoreboard exposed escapes, wrong fail
 addresses and a broken repair table in every detectable fault, none of which the design's own
-test detected. The designs, testbenches and scripts will be released with the paper.
+test detected, while the same scoreboard reported no false alarm on a second, well-built design.
+The designs, testbenches and scripts will be released with the paper.
 \tbd{repository link}
 
 \section*{Acknowledgment}

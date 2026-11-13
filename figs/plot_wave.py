@@ -89,17 +89,23 @@ def fmt(v, kind):
 
 
 COMPACT = ["clk", "w_state", "w_mem_addr", "w_mem_we", "w_rdata", "w_read_addr", "w_fail_v", "fail"]
+NARROW_MC = ["clk", "w_bist_addr", "w_mem_addr_a", "w_exp", "w_rxd", "w_errcor", "w_rep0"]
+
+
+NARROW = False
 
 
 def main():
     argv = sys.argv[1:]
     compact = "--compact" in argv
-    argv = [a for a in argv if a != "--compact"]
+    narrow = "--narrow-mc" in argv
+    argv = [a for a in argv if a not in ("--compact", "--narrow-mc")]
     vcd, t0, t1, out, title = argv[0], float(argv[1]), float(argv[2]), argv[3], argv[4]
     marks = [float(m) for m in argv[5:]]
     tr = parse_vcd(vcd)
-    rows = [s for s in SHOW if s[0] in tr and (not compact or s[0] in COMPACT)]
-    fig, ax = plt.subplots(figsize=(7.16, 0.28 * len(rows) + 0.6))
+    rows = [s for s in SHOW if s[0] in tr and (not compact or s[0] in COMPACT)
+            and (not narrow or s[0] in NARROW_MC)]
+    fig, ax = plt.subplots(figsize=(3.5 if narrow else 7.16, 0.28 * len(rows) + 0.6))
     for i, (name, label, kind) in enumerate(rows):
         y = len(rows) - 1 - i
         pts = [(t0, value_at(tr[name], t0))] + [(t, v) for t, v in tr[name] if t0 < t < t1] + [(t1, None)]
@@ -112,8 +118,8 @@ def main():
                 ax.fill_between([ta + 0.4, tb - 0.4], y + 0.05, y + 0.65, color="#E8F1F8", lw=0)
                 ax.plot([ta + 0.4, tb - 0.4], [y + 0.05, y + 0.05], color="#0072B2", lw=0.6)
                 ax.plot([ta + 0.4, tb - 0.4], [y + 0.65, y + 0.65], color="#0072B2", lw=0.6)
-                if tb - ta >= 6:
-                    ax.text((ta + tb) / 2, y + 0.35, fmt(va, kind), ha="center", va="center", fontsize=6)
+                if tb - ta >= (8 if narrow else 6):
+                    ax.text((ta + tb) / 2, y + 0.35, fmt(va, kind), ha="center", va="center", fontsize=(5 if narrow else 6))
         ax.text(t0 - (t1 - t0) * 0.01, y + 0.35, label, ha="right", va="center", fontsize=7)
     for m in marks:
         ax.axvline(m, color="#CC79A7", lw=1.0, ls="--")

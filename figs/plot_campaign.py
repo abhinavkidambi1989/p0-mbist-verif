@@ -49,22 +49,31 @@ plt.savefig(ROOT / "figs" / "fig_detection.png", dpi=200)
 
 # ---------- Fig: checker levels ----------
 det = [r for r in rows if r["exp_fail"] == "1"]
-levels = [("L0: DONE only\n(upstream test)", "bug_L0"),
+levels = [("L0: DONE only", "bug_L0"),
           ("L1: DONE + FAIL\nvs. golden", "bug_L1"),
           ("L2: full scoreboard\n(+ fail addr., repair)", "bug_L2")]
-fig, ax = plt.subplots(figsize=(3.5, 1.45))
-vals = [pct(det, k) for _, k in levels]
-cnts = [sum(int(r[k]) for r in det) for _, k in levels]
-ys = list(range(len(levels)))[::-1]
-ax.barh(ys, vals, height=0.55, color="#0072B2")
-for y, v, c in zip(ys, vals, cnts):
-    ax.text(v + 1.5, y, f"{v:.1f}%  ({c}/{len(det)})", va="center", fontsize=6.5)
-ax.set_yticks(ys)
+mc_path = ROOT / "results" / "faults_mbist_ctrl.csv"
+mc = [r for r in csv.DictReader(open(mc_path)) if r["spare_fault"] == "0"] if mc_path.exists() else []
+designs = [("Design A (TT #777)", det, "#0072B2")] + ([("Design B (mbist_ctrl)", mc, "#E69F00")] if mc else [])
+fig, ax = plt.subplots(figsize=(3.5, 1.9 if mc else 1.45))
+h = 0.36 if mc else 0.55
+base = list(range(len(levels)))[::-1]
+for d, (name, rs, col) in enumerate(designs):
+    off = (0.5 - d) * h if mc else 0
+    vals = [pct(rs, k) for _, k in levels]
+    cnts = [sum(int(r[k]) for r in rs) for _, k in levels]
+    ys = [y + off for y in base]
+    ax.barh(ys, vals, height=h * 0.92, color=col, label=name)
+    for y, v, c in zip(ys, vals, cnts):
+        ax.text(v + 1.5, y, f"{v:.1f}%  ({c}/{len(rs)})", va="center", fontsize=6)
+ax.set_yticks(base)
 ax.set_yticklabels([l for l, _ in levels], fontsize=6.5)
-ax.set_xlim(0, 135)
+ax.set_xlim(0, 140)
 ax.set_xticks([0, 25, 50, 75, 100])
-ax.set_xlabel("Detectable faults whose run exposes a design bug (%)")
+ax.set_xlabel("Detectable fault runs exposing a design bug (%)")
 ax.grid(axis="y", visible=False)
+if mc:
+    ax.legend(loc="center right", bbox_to_anchor=(1.0, 0.52), frameon=False, fontsize=6)
 plt.savefig(ROOT / "figs" / "fig_checkers.pdf")
 plt.savefig(ROOT / "figs" / "fig_checkers.png", dpi=200)
 print("wrote figs/fig_detection.* and figs/fig_checkers.*")
