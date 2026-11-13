@@ -28,6 +28,17 @@ SHOW = [  # (vcd name, label, kind)
     ("w_rt1", "repair[1].addr", "dec"),
     ("done", "DONE", "bit"),
     ("fail", "FAIL", "bit"),
+    # mbist_ctrl probes (tb_mbist_ctrl.v)
+    ("w_bist_addr", "bist_addr", "dec"),
+    ("w_rd", "op_read", "bit"),
+    ("w_wr", "op_write", "bit"),
+    ("w_mem_addr_a", "SRAM read addr", "dec"),
+    ("w_mem_addr_b", "SRAM write addr", "dec"),
+    ("w_exp", "expected data", "hex"),
+    ("w_rxd", "read data", "hex"),
+    ("w_errcor", "error_correct", "bit"),
+    ("w_repcnt", "repair count", "dec"),
+    ("w_rep0", "repair[0].addr", "dec"),
 ]
 
 
@@ -43,7 +54,7 @@ def parse_vcd(path):
                 ts = " ".join(tok[1:]).replace("$end", "").strip() or next(f).strip()
                 scale = {"1ps": 1e-3, "1ns": 1.0}.get(ts.replace(" ", ""), 1.0)
             elif tok[0] == "$scope":
-                in_tb = tok[2] in ("tb_tt777",)
+                in_tb = tok[2] in ("tb_tt777", "tb_mbist_ctrl")
             elif tok[0] == "$var" and in_tb:
                 ids.setdefault(tok[3], []).append(tok[4])
             elif tok[0].startswith("#"):
@@ -73,7 +84,7 @@ def fmt(v, kind):
     if kind == "state":
         return STATE.get(n, str(n))
     if kind == "hex":
-        return f"{n:02X}"
+        return f"{n:02X}" if n < 256 and len(v) <= 8 else f"{n:08X}"
     return str(n)
 
 

@@ -70,6 +70,20 @@ module tb_mbist_ctrl;
     end
   end
 
+
+  // ---------------- optional waveform dump (+VCD=<file>) ----------------
+  wire [8:0]  w_bist_addr = dut.bist_addr;
+  wire        w_rd = dut.op_read, w_wr = dut.op_write, w_cmp = dut.u_cmp.compare;
+  wire [31:0] w_exp = dut.u_cmp.exp_data, w_rxd = dut.u_cmp.rxd_data;
+  wire        w_errcor = dut.bist_error_correct;
+  wire [3:0]  w_repcnt = dut.u_mem_sel.u_repair_A.ErrorCnt;
+  wire [8:0]  w_rep0 = dut.u_mem_sel.u_repair_A.RepairMem[0];
+  wire [8:0]  w_mem_addr_a = mem_addr_a, w_mem_addr_b = mem_addr_b;
+  wire        w_cen_a = mem_cen_a, w_web_b = mem_web_b;
+  reg  [8*64-1:0] vcdname;
+  initial if ($value$plusargs("VCD=%s", vcdname)) begin $dumpfile(vcdname); $dumpvars(1, tb_mbist_ctrl); end
+  always @(posedge dut.bist_error_correct) $display("RESULT errcor_at %0t addr %0d", $time, dut.bist_error_addr);
+
   integer writes = 0, reads = 0;
   always @(posedge mem_clk_b) if (!mem_cen_b && !mem_web_b) writes = writes + 1;
   always @(posedge mem_clk_a) if (!mem_cen_a) reads = reads + 1;
