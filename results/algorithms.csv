@@ -1,0 +1,25 @@
+algorithm,ops_per_word,class,detected,total
+MATS+,5,SAF,512,512
+MATS+,5,TF,256,512
+MATS+,5,CF inter-word,744,1984
+MATS+,5,CF intra-word,256,1024
+March X (= Design A),6,SAF,512,512
+March X (= Design A),6,TF,512,512
+March X (= Design A),6,CF inter-word,992,1984
+March X (= Design A),6,CF intra-word,512,1024
+March Y,8,SAF,512,512
+March Y,8,TF,512,512
+March Y,8,CF inter-word,992,1984
+March Y,8,CF intra-word,512,1024
+March C-,10,SAF,512,512
+March C-,10,TF,512,512
+March C-,10,CF inter-word,1984,1984
+March C-,10,CF intra-word,512,1024
+"March C-, 4 backgrounds",40,SAF,512,512
+"March C-, 4 backgrounds",40,TF,512,512
+"March C-, 4 backgrounds",40,CF inter-word,1984,1984
+"March C-, 4 backgrounds",40,CF intra-word,1024,1024
+Design B default,65,SAF,512,512
+Design B default,65,TF,512,512
+Design B default,65,CF inter-word,1984,1984
+Design B default,65,CF intra-word,1024,1024

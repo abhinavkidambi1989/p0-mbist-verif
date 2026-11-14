@@ -1,0 +1,32 @@
+% Root cause of B1/B2: read pipeline of Design A at register level -- included by main.tex
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >={Stealth[length=1.4mm]},
+  ff/.style={draw, minimum width=10mm, minimum height=7mm, align=center, inner sep=1pt,
+             path picture={\draw ([xshift=-1.2mm]path picture bounding box.south) -- ++(1.2mm,1.4mm) -- ++(1.2mm,-1.4mm);}},
+  lg/.style={draw, rounded corners=1pt, align=center, inner sep=2pt, minimum height=7mm},
+  cyc/.style={font=\tiny, text=black!60}]
+\node[ff] (addr) at (0,0) {addr};
+\node[ff] (ma)   at (1.55,0) {mem\_addr};
+\node[lg, fill=black!5] (arr) at (3.05,0) {array};
+\node[ff] (mrd)  at (4.55,0) {mem\_rdata};
+\node[lg] (cmp)  at (6.1,0) {$\ne$\,exp?};
+\node[ff] (ra)   at (1.55,-1.25) {read\_addr};
+\node[ff] (fa)   at (6.1,-1.25) {fail\_addr};
+\node[cyc] at (0,0.6) {cycle $k$: $a$};
+\node[cyc] at (1.55,0.6) {$k{+}1$: $a$};
+\node[cyc] at (4.55,0.6) {$k{+}2$: data($a$)};
+\node[cyc] at (1.55,-1.85) {$k{+}2$: $a\pm1$};
+\draw[->] (addr) -- (ma);
+\draw[->] (ma) -- (arr);
+\draw[->] (arr) -- (mrd);
+\draw[->] (mrd) -- (cmp);
+\draw[->] (cmp) -- node[font=\tiny, left] {fail\_valid} (fa);
+\draw[->] (addr.south) |- (ra.west);
+\draw[->] (ra.east) -- (fa.west);
+\draw[red!70!black, thick, dashed] (5.35,-0.55) rectangle (6.85,-1.7);
+\node[font=\tiny, text=red!70!black, align=center] at (3.85,-1.55) {B2: data($a$) is\\reported with $a\pm1$};
+\end{tikzpicture}
+\caption{Register-level view of Design A's read pipeline (boxes with a clock mark are registers). The read data reaches the comparator two stages after its address, but the fail address is taken from a register that has already advanced (B2). For the same reason the last read of an element is still in flight when the FSM leaves the element, so it is never compared (B1).}
+\label{fig:rootcause}
+\end{figure}

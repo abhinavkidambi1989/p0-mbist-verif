@@ -1,0 +1,17 @@
+design,id,file,description,killed_L0,killed_L1,killed_L1c,killed_L2,tests,first_kill_test
+A,A01,mbist_marchc_controller.v,r0 compare checks low nibble only (up element),0,1,1,1,257,7
+A,A02,mbist_marchc_controller.v,r1 compare checks low nibble only,0,1,1,1,257,13
+A,A03,mbist_marchc_controller.v,final r0 compare checks low nibble only,0,1,1,1,257,6
+A,A04,mbist_marchc_controller.v,up element skips odd addresses,1,1,1,1,257,0
+A,A05,mbist_marchc_controller.v,writes 0 instead of 1,0,1,1,1,257,0
+A,A06,mbist_marchc_controller.v,FAIL not set by first element,0,0,0,0,257,-1
+A,A07,mbist_marchc_controller.v,fail address from wrong register,0,0,0,0,257,-1
+A,A08,mbist_marchc_controller.v,final read element skipped,0,1,1,1,257,2
+A,A09,mbist_marchc_controller.v,down element starts one address low,0,1,1,1,257,243
+A,A10,mbist_marchc_controller.v,DONE never asserted,1,1,1,1,257,0
+A,A11,mbist_marchc_controller.v,no fail report from down element,0,0,0,1,257,3
+A,A12,mbist_marchc_controller.v,down-element fail address +1,0,0,0,1,257,3
+A,A13,mbisr_controller.v,all repairs map to spare 0,0,0,0,1,257,235
+A,A14,mbisr_controller.v,duplicate check disabled,0,0,0,0,257,-1
+A,A15,mbisr_controller.v,repair entry never marked valid,0,0,0,1,257,2
+A,A16,mbisr_controller.v,repair stores address +1,0,0,0,1,257,2

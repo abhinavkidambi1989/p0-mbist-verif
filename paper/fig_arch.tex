@@ -1,0 +1,54 @@
+% Architecture of both designs (circuit-level block diagrams) -- included by main.tex
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >={Stealth[length=1.5mm]},
+  blk/.style={draw, rounded corners=1pt, align=center, inner sep=2pt, minimum height=7mm},
+  mem/.style={draw, fill=black!6, align=center, inner sep=2pt, minimum width=22mm, minimum height=15mm},
+  bad/.style={draw=red!70!black, thick},
+  lab/.style={font=\tiny, inner sep=1pt}]
+% ---------------- (a) Design A ----------------
+\begin{scope}
+\node[font=\small\bfseries] at (-1.4,1.6) {(a)};
+\node[blk, minimum width=22mm] (fsmA) at (0,0) {MBIST FSM, March X\\$\Uparrow w0;\Uparrow(r0,w1);$\\$\Downarrow(r1,w0);\Uparrow r0$};
+\node[blk] (remA) at (3.4,0) {remap\\mux};
+\node[mem] (memA) at (6.1,0) {};
+\node[font=\tiny, align=center] at (6.1,0.3) {memory $32\times8$};
+\draw[bad, fill=red!8] (5.15,-0.62) rectangle (7.05,-0.25);
+\node[font=\tiny] at (6.1,-0.44) {rows 30--31 = spares (B5)};
+\node[blk, bad, minimum width=18mm] (cmpA) at (3.4,-1.7) {compare $\ne$ exp.\\(B1, B2)};
+\node[blk, bad, minimum width=14mm] (raA) at (0,-1.7) {read\_addr\\register (B2)};
+\node[blk, bad] (camA) at (3.4,1.45) {CAM, 2 entries\\+ insert (B3, B4)};
+\draw[->] (fsmA.east) -- node[lab, above] {addr, wdata, we} (remA.west);
+\draw[->] (remA.east) -- (memA.west);
+\draw[->] (memA.south) |- node[lab, pos=0.7, below] {mem\_rdata} (cmpA.east);
+\draw[->] (fsmA.south) -- node[lab, left] {addr} (raA.north);
+\draw[->] (raA.east) -- node[lab, below] {fail\_addr} (cmpA.west);
+\draw[->] ([xshift=-7mm]cmpA.north) -- node[lab, left, pos=0.3, align=right] {fail\_valid,\\fail\_addr} ([xshift=-7mm]camA.south);
+\draw[->] (camA.south) -- (remA.north);
+\draw[->] (cmpA.south) -- ++(0,-0.35) node[lab, below] {DONE, FAIL};
+\end{scope}
+% ---------------- (b) Design B ----------------
+\begin{scope}[xshift=9.4cm]
+\node[font=\small\bfseries] at (-1.4,1.6) {(b)};
+\node[blk, minimum width=18mm] (cfgB) at (0,1.45) {scan config: range,\\8 backgrounds, 5 el.};
+\node[blk, minimum width=18mm] (fsmB) at (0,0) {FSM, addr gen,\\op + pattern select};
+\node[blk] (remB) at (3.0,0) {remap\\mux};
+\node[mem] (memB) at (5.6,0) {};
+\node[font=\tiny, align=center] at (5.6,0.3) {SRAM $512\times32$\\sky130, 1RW + 1R};
+\draw[fill=green!10] (4.65,-0.62) rectangle (6.55,-0.25);
+\node[font=\tiny] at (5.6,-0.44) {spares 0x1FC--0x1FF};
+\node[blk, minimum width=18mm] (cmpB) at (3.0,-1.7) {compare + error\\count (limit 4)};
+\node[blk] (camB) at (3.0,1.45) {repair CAM\\4 entries};
+\draw[->] (cfgB) -- (fsmB);
+\draw[->] (fsmB.east) -- node[lab, above] {port 0 write} (remB.west);
+\draw[->] (remB.east) -- (memB.west);
+\draw[->] (memB.south) |- node[lab, pos=0.7, below] {port 1 read} (cmpB.east);
+\draw[->] (fsmB.south) |- node[lab, pos=0.3, left] {exp. data, addr} (cmpB.west);
+\draw[->] ([xshift=-7mm]cmpB.north) -- node[lab, left, pos=0.3] {error addr} ([xshift=-7mm]camB.south);
+\draw[->] (camB.south) -- (remB.north);
+\draw[->] (cmpB.south) -- ++(0,-0.35) node[lab, below] {DONE, ERROR, CORRECT, count};
+\end{scope}
+\end{tikzpicture}
+\caption{Architecture of the two designs under test. (a) Design A (TT \#777): red blocks are where bugs B1--B5 of Table~\ref{tab:bugs} sit; the spare rows lie inside the tested range. (b) Design B (mbist\_ctrl): programmable algorithm and data backgrounds, separate write and read ports, spares outside the tested range.}
+\label{fig:arch}
+\end{figure*}

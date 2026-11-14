@@ -13,6 +13,13 @@ March notation: list of (order, [ops]); order in {"up","down","any"}; ops "w0","
 MARCH_TT777 = [  # algorithm implemented by TT #777 (shortened March C-, 4 elements)
     ("up", ["w0"]), ("up", ["r0", "w1"]), ("down", ["r1", "w0"]), ("up", ["r0"]),
 ]
+MATS_PLUS = [("up", ["w0"]), ("up", ["r0", "w1"]), ("down", ["r1", "w0"])]
+MARCH_X = [("up", ["w0"]), ("up", ["r0", "w1"]), ("down", ["r1", "w0"]), ("up", ["r0"])]
+MARCH_Y = [("up", ["w0"]), ("up", ["r0", "w1", "r1"]), ("down", ["r1", "w0", "r0"]), ("up", ["r0"])]
+# Design B default stimuli as decoded from BIST_STIMULUS_TYPE1..5 (per data background D)
+MARCH_DESIGN_B = [("up", ["w0"]), ("up", ["r0", "w1", "r1"]), ("up", ["r1", "w0", "r0"]),
+                  ("down", ["r0", "w1", "r1"]), ("down", ["r1", "w0", "r0"])]
+DESIGN_B_BACKGROUNDS = [0x55, 0x33, 0x0F, 0xFF, 0x00]  # low byte of its 8 patterns (distinct)
 MARCH_C_MINUS = [  # full March C- (10N)
     ("up", ["w0"]), ("up", ["r0", "w1"]), ("up", ["r1", "w0"]),
     ("down", ["r0", "w1"]), ("down", ["r1", "w0"]), ("up", ["r0"]),
@@ -43,15 +50,17 @@ class FaultyMemory:
             self.m[f.a][f.b] = f.v
 
     def write(self, addr, bitval):
+        """bitval: 0/1 for a solid word, or a list of per-bit values (data background)."""
         f, old = self.f, list(self.m[addr])
+        word = bitval if isinstance(bitval, list) else [bitval] * self.width
         for b in range(self.width):
-            self.m[addr][b] = bitval
+            self.m[addr][b] = word[b]
         if f is not None:
             if f.kind == "TF" and addr == f.a:
-                o = old[f.b]
-                if f.v == 1 and o == 0 and bitval == 1:
+                o, n = old[f.b], word[f.b]
+                if f.v == 1 and o == 0 and n == 1:
                     self.m[addr][f.b] = 0
-                if f.v == 0 and o == 1 and bitval == 0:
+                if f.v == 0 and o == 1 and n == 0:
                     self.m[addr][f.b] = 1
             if f.kind == "CF" and addr == f.aa:
                 o, n = old[f.ab], self.m[addr][f.ab]
@@ -63,18 +72,25 @@ class FaultyMemory:
         return list(self.m[addr])
 
 
-def run_march(algorithm, depth, width, fault=None, nrep=2):
+def run_march(algorithm, depth, width, fault=None, nrep=2, backgrounds=None):
+    """backgrounds: optional list of ints; the algorithm is repeated per background, with
+    data '0' = background bits and '1' = their complement (solid 0/1 when None)."""
     mem = FaultyMemory(depth, width, fault)
     fail_addrs = []
-    for order, ops in algorithm:
-        addrs = range(depth - 1, -1, -1) if order == "down" else range(depth)
-        for a in addrs:
-            for op in ops:
-                val = int(op[1])
-                if op[0] == "w":
-                    mem.write(a, val)
-                elif any(bit != val for bit in mem.read(a)):
-                    fail_addrs.append(a)
+    for bg in (backgrounds if backgrounds is not None else [None]):
+        for order, ops in algorithm:
+            addrs = range(depth - 1, -1, -1) if order == "down" else range(depth)
+            for a in addrs:
+                for op in ops:
+                    val = int(op[1])
+                    if bg is None:
+                        word = [val] * width
+                    else:
+                        word = [((bg >> b) & 1) ^ val for b in range(width)]
+                    if op[0] == "w":
+                        mem.write(a, word)
+                    elif mem.read(a) != word:
+                        fail_addrs.append(a)
     repair = []
     for a in fail_addrs:
         if a not in repair and len(repair) < nrep:
