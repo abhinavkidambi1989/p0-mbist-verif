@@ -135,15 +135,32 @@ def build_b(d):
 
 
 def tests_b():
-    return [[], [(0, 200, 5, 0)], [(0, 0, 0, 1)], [(0, 507, 31, 0)], [(1, 300, 17, 1)],
+    """Original 7 tests (fault-free, single SAF/TF, 3 and 5 faulty words) plus 23 added on 15 Nov:
+    TFs in both directions, boundary words, exactly-at-limit (4 words), and inter-/intra-word
+    idempotent coupling faults (one CF per run, given as ('CF', victim a, b, aggressor aa, ab, t, v))."""
+    base = [[], [(0, 200, 5, 0)], [(0, 0, 0, 1)], [(0, 507, 31, 0)], [(1, 300, 17, 1)],
             [(0, 50, 2, 1), (0, 250, 20, 0), (0, 450, 9, 1)],
             [(0, 10, 1, 0), (0, 110, 12, 1), (0, 210, 23, 0), (0, 310, 30, 1), (0, 410, 4, 0)]]
+    added = [[(1, 120, 8, 0)], [(1, 0, 31, 1)], [(1, 507, 0, 0)], [(0, 1, 16, 1)], [(0, 506, 15, 0)],
+             [(0, 20, 3, 1), (0, 140, 7, 0), (0, 260, 11, 1), (0, 380, 19, 0)],
+             [(1, 60, 6, 1), (0, 61, 6, 0)]]
+    added += [[("CF", a, b, aa, ab, t, v)] for a, b, aa, ab, t, v in [
+        (101, 3, 100, 3, 1, 1), (100, 3, 101, 3, 1, 1), (230, 9, 231, 9, 0, 0), (231, 9, 230, 9, 0, 1),
+        (0, 0, 1, 0, 1, 1), (507, 31, 506, 31, 0, 0), (400, 12, 399, 12, 1, 0), (77, 28, 78, 28, 0, 1),
+        (200, 5, 200, 4, 1, 1), (200, 4, 200, 5, 1, 0), (333, 17, 333, 16, 0, 1), (333, 16, 333, 17, 0, 0),
+        (12, 30, 12, 31, 1, 1), (450, 1, 450, 0, 0, 0), (90, 22, 90, 23, 1, 0), (160, 8, 160, 9, 0, 1)]]
+    return base + added
 
 
 def sim_b(vvp, faults):
     args = ["vvp", "-n", str(vvp), f"+N={len(faults)}", "+MAXC=400000"]
+    cfs = [f for f in faults if f[0] == "CF"]
+    faults = [f for f in faults if f[0] != "CF"]
+    args[3] = f"+N={len(faults)}"
     for i, (k, a, b, v) in enumerate(faults):
         args += [f"+K{i}={k}", f"+A{i}={a}", f"+B{i}={b}", f"+V{i}={v}"]
+    for _, a, b, aa, ab, t, v in cfs[:1]:
+        args += [f"+CA={a}", f"+CB={b}", f"+CAA={aa}", f"+CAB={ab}", f"+CT={t}", f"+CV={v}"]
     out = subprocess.run(args, capture_output=True, text=True, timeout=600).stdout
     o = {"done": 0, "flag": 0, "correct": 0, "cnt": 0, "rep": []}
     rc = 0

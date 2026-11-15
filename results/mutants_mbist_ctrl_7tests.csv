@@ -1,0 +1,19 @@
+design,id,file,description,killed_L0,killed_L1,killed_L1c,killed_L2,tests,first_kill_test
+B,B01,mbist_addr_gen.sv,up element ends one address early,0,1,1,1,7,0
+B,B02,mbist_addr_gen.sv,up element skips odd addresses,1,1,1,1,7,0
+B,B03,mbist_addr_gen.sv,down element ends one address early,0,1,1,1,7,0
+B,B04,mbist_data_cmp.sv,read-invert ignored in expected data,0,1,1,1,7,0
+B,B05,mbist_data_cmp.sv,upper 16 data bits not compared,0,1,1,1,7,3
+B,B06,mbist_data_cmp.sv,error address +1,0,1,1,1,7,1
+B,B07,mbist_data_cmp.sv,error limit 3 instead of 4,1,1,1,1,7,6
+B,B08,mbist_data_cmp.sv,CORRECT never set,0,0,0,0,7,-1
+B,B09,mbist_data_cmp.sv,ERROR never set,0,1,1,1,7,6
+B,B10,mbist_data_cmp.sv,no repair request issued,0,1,1,1,7,1
+B,B11,mbist_repair_addr.sv,every repair overwrites entry 0,0,1,1,1,7,5
+B,B12,mbist_repair_addr.sv,all repairs map to spare 0,0,1,1,1,7,5
+B,B13,mbist_repair_addr.sv,remap also uses an unwritten entry,0,0,0,0,7,-1
+B,B14,mbist_fsm.sv,stops after first data background,0,0,0,0,7,-1
+B,B15,mbist_fsm.sv,does not abort on unrepairable error,0,0,0,0,7,-1
+B,B16,mbist_pat_sel.sv,data background never advances,1,1,1,1,7,0
+B,B17,mbist_sti_sel.sv,one March element skipped,0,1,1,1,7,0
+B,B18,mbist_repair_addr.sv,repair-side CORRECT never set,0,0,1,1,7,1

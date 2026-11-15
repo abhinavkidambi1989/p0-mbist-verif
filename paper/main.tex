@@ -35,10 +35,11 @@ exposes no bug and a pass/fail check exposes only 2.8\% of detectable faults (72
 address and repair entry is wrong and the faulty cell is repaired in only 1.6\% of failing runs.
 On a second open-source MBIST with row-redundancy repair the same scoreboard raises no false
 alarm in 1{,}694 runs (95\% upper bound 0.23\%). Across 34 seeded bugs, completion-only checking
-kills 15\%, pass/fail checking 62\% and the full scoreboard 79\%. Reprogramming the second
+kills 15\%, pass/fail checking 62\% and the full scoreboard 82\%. Reprogramming the second
 controller with six alternative March algorithms, its repair outputs match the golden model in all
 1{,}288 runs, while fault coverage on the RTL ranges from 64\% (MATS+) to 100\% (March C-- with four
-data backgrounds). The flow uses only open-source tools and runs in seconds to minutes.
+data backgrounds). At chip level, all eight instances match in 320 of 320 results, and every
+repaired word reads back correctly. All designs, tools and scripts are open source.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -68,7 +69,8 @@ root causes (Sections~\ref{sec:resA}--\ref{sec:root}); (d) a control study on a 
 which the same scoreboard raises no false alarm, and a seeded-bug qualification of all checker
 levels on both designs (Sections~\ref{sec:resB}--\ref{sec:mut}); (e) the same check applied to
 seven March algorithms loaded into one controller, verifying its algorithm encoding and measuring
-each algorithm's coverage on the RTL (Section~\ref{sec:alg}); and (f) design recommendations
+each algorithm's coverage on the RTL (Section~\ref{sec:alg}), and a chip-level run of all eight
+instances with post-repair functional readback (Section~\ref{sec:sys}); and (f) design recommendations
 for MBIST/BISR logic (Section~\ref{sec:disc}).
 
 \section{Background and Related Work}
@@ -85,14 +87,19 @@ need longer tests \cite{vandegoor1996,alharbi2003}.
 
 \textbf{Verifying memory tests and MBIST.} Van de Goor and Smit automated the verification of
 March \emph{algorithms} against fault models \cite{vandegoor1994}; that work does not check the RTL
-that implements an algorithm. Assertion-based verification has been applied to March-based MBIST
-controllers \cite{kumar2021}, and a recent industrial methodology closes coverage gaps in
-shared-bus MBIST with physical-design-aware checks \cite{tulsyan2026}.
+that implements an algorithm. Roy and Parekhji model BIST controllers for formal verification of
+their integration into SoCs \cite{roy2007}; formal and assertion-based checks have been applied to
+MBIST multicycle paths \cite{daga2015} and to March-based MBIST controllers \cite{kumar2021}; and a
+recent industrial methodology closes coverage gaps in shared-bus MBIST with physical-design-aware
+checks \cite{tulsyan2026}. These works check the controller's sequencing and integration; none
+compares the fail addresses and repair table against a reference under a fault campaign, or
+measures what a weaker checker misses.
 
 \textbf{Repair and testbench quality.} BISR stores failing addresses and remaps accesses to spare
 rows, columns or words \cite{zorian2003,sontakke2024}, so its correctness depends directly on the
 fail addresses MBIST reports. Mutation analysis \cite{demillo1978,jia2011} measures how many
-seeded bugs a test environment detects.
+seeded bugs a test environment detects, and has been used to qualify RTL testbenches
+\cite{huang2015}.
 
 We differ from these works in checking, against a golden model, \emph{every} result an MBIST/BISR
 block produces under a systematic fault campaign, in quantifying what weaker checkers miss with
@@ -134,9 +141,11 @@ The golden model simulates a $D\times W$ memory at the operation level. An algor
 background and `1' its complement. Each read compares the whole word; a mismatching read appends
 its address to the expected fail list. The expected repair table is the first $R$ distinct failing
 addresses in detection order. Spare words are assumed fault-free and outside the tested range,
-the documented intent of both designs. On Design~A's fault list the model reproduces March theory:
-single-pass MATS+ detects 50\% of TFs, March X and March Y 50\% of inter-word CFs, March C-- all
-of them, and four data backgrounds all intra-word CFs (RTL results in Section~\ref{sec:alg}).
+the documented intent of both designs. The model is validated two ways. On Design~A's fault list
+it reproduces March theory: single-pass MATS+ detects 50\% of TFs, March X and March Y 50\% of
+inter-word CFs, March C-- all of them, and four data backgrounds all intra-word CFs. And it agrees
+with an independently written RTL controller (Design~B) in all 2{,}962 fault runs of
+Sections~\ref{sec:resB} and~\ref{sec:alg}, so its disagreements with Design~A are not model errors.
 
 \subsection{Fault injection}
 Faults are injected into the RTL memory array without editing the design. A correction is applied
@@ -184,7 +193,9 @@ cells and idempotent CFs with physically adjacent aggressors (row above, row bel
 bit), both transitions and forced values. Design~B: an SAF in every user word, a TF in every
 second word, 30 random sets each of 2--6 faulty words and 20 faulty-spare cases. Seeded bugs: 16
 in Design~A (controller and BISR) and 18 in Design~B (address generator, comparator, repair,
-FSM, pattern and stimulus selection).
+FSM, pattern and stimulus selection), each a single operator, constant, index or condition change.
+Design~B's seeded bugs run against 30 tests: fault-free, single SAFs and TFs (including boundary
+words), two to five faulty words, and 16 inter- and intra-word CFs.
 
 \begin{table}[t]
 \centering
@@ -198,7 +209,7 @@ FSM, pattern and stimulus selection).
 Memory / spares        & $32\times8$ / 2 rows & $512\times32$ / 4 words \\
 Algorithm              & March X, solid data   & 5 el.\ $\times$ 8 backgrounds \\
 Fault runs             & 4{,}032               & 1{,}694 \\
-Seeded bugs $\times$ tests & $16\times129$     & $18\times7$ \\
+Seeded bugs $\times$ tests & $16\times129$     & $18\times30$ \\
 Cycles per MBIST run$^\ast$ & 228            & 162{,}563 \\
 Simulation time per run & 0.01\,s             & 2.05\,s \\
 \bottomrule
@@ -207,8 +218,7 @@ Simulation time per run & 0.01\,s             & 2.05\,s \\
 \end{table}
 
 \textbf{Tools.} Icarus Verilog 14.0 \cite{icarus}; Python for the golden model, campaigns,
-statistics and plots. The directed tests behind Table~\ref{tab:bugs} were also reproduced on the
-EDA Playground web service with Icarus Verilog 12.0.
+statistics and plots.
 
 \section{Results}
 \label{sec:results}
@@ -315,8 +325,7 @@ runs (95\% upper bound 0.23\%). Fig.~\ref{fig:wavemc} shows a repair: the read o
 5555\,5554 instead of 5555\,5555, the word enters repair entry~0, and from the next access it is
 remapped to spare 0x1FC. A faulty spare that is never used has no effect; when it is used, the
 controller detects it, consumes the next entry for the same address, and reports ERROR only when
-the four entries run out. Code review found a latent off-by-one in the repair-counter bound
-($\le$ instead of $<$ the limit), unreachable because the comparator stops reporting at the limit.
+the four entries run out.
 
 \begin{table}[t]
 \centering
@@ -347,11 +356,13 @@ Faulty spare + 0--4 faults   & 20      & -- / 4  & -- \\
 \label{sec:mut}
 Fig.~\ref{fig:mut} shows the kill rate of the 34 seeded bugs. Completion-only checking kills 5
 (15\%; only bugs that change whether or when DONE asserts); the pass/fail flag kills 21 (62\%); the
-full scoreboard kills 27 (79\%). On Design~A the step from L1 to L2 adds five bugs (50\% to 81\%),
-all in fail-address reporting and repair. On Design~B, CORRECT and the count add one; repair errors
-there also change the count, so the repair table adds none. Table~\ref{tab:surv} lists the seven
-survivors: four do not change any output (equivalent), and three are masked by the test set, most
-notably ``stops after the first data background'', which only intra-word CFs would expose.
+full scoreboard kills 28 (82\%, CI 66--92\%). On Design~A the step from L1 to L2 adds five bugs
+(50\% to 81\%), all in fail-address reporting and repair. On Design~B, CORRECT and the count add two
+(72\% to 83\%); repair errors there also change the count, so the repair table adds none. One of
+the two, ``stops after the first data background'', survived an earlier seven-test set and is
+killed only by an intra-word CF test. Table~\ref{tab:surv} lists the six survivors: four do not
+change any output (equivalent) and two are masked by the test set. Excluding the equivalent bugs,
+as mutation analysis usually does \cite{jia2011}, the full scoreboard kills 28 of 30 (93\%).
 
 \begin{figure}[t]
 \centering
@@ -374,7 +385,6 @@ A07 & Fail address from \texttt{addr} not \texttt{read\_addr} & Equivalent in th
 A14 & Duplicate check disabled & Equivalent given B3 \\
 B08 & Comparator CORRECT never set & Top-level CORRECT comes from repair block \\
 B13 & Remap also scans unwritten entry & Equivalent \\
-B14 & Stops after first background & Masked: needs intra-word CF \\
 B15 & No abort on unrepairable error & Same final outputs \\
 \bottomrule
 \end{tabular}
@@ -399,9 +409,7 @@ Fig.~\ref{fig:algrtl} shows what the RTL then detects. All algorithms catch ever
 Inter-word CFs separate them: MATS+ detects 48\%, March X and Y 58\%, and March C-- and LR 100\%.
 With solid data, at most half of the intra-word CFs (between bits of one word) are detected, since
 both bits always hold the same value; four backgrounds raise this to 100\%, as does the shipped
-configuration, which costs 1.7$\times$ more cycles than March C-- with four backgrounds. The same
-holds in the golden model for Design~A's $32\times8$ memory, where its March X detects 50\% of
-inter-word CFs against 100\% for March C--.
+configuration, which costs 1.7$\times$ more cycles than March C-- with four backgrounds.
 
 \begin{figure}[t]
 \centering
@@ -411,6 +419,22 @@ controller (184 faults per algorithm; median test length in clock cycles). Every
 the golden model.}
 \label{fig:algrtl}
 \end{figure}
+
+\subsection{Chip-level run: eight MBIST/BISR instances}
+\label{sec:sys}
+Design~B's chip holds eight instances (four $512\times32$ and four $256\times32$ SRAMs) whose DONE,
+ERROR, CORRECT and count are packed into two 32-bit status registers of a shared register block.
+We simulated all eight with that block, wired as on the chip; bus drivers replace the host bridge
+and the interconnect, which passes BIST signals through unchanged. Each of 40 runs spread up to 16
+SAFs and TFs over several memories at once (30 runs hit two or more); all eight tests ran in
+parallel; the testbench read both status registers and every repair table, then wrote and read
+every user word of every memory over its functional bus, through the repair remap. The golden model predicts each instance's status byte, its repair
+table, and, after repair, no bad word if $|W|\le4$ and $|W|-4$ otherwise. All 320 instance results
+match (0 mismatches, 95\% upper bound 1.2\%), covering 131 faulty memories and 397 faulty words:
+the register packing reports every instance in its own field, a fault in one memory never appears
+in another, and all 265 repaired words read back correctly. In a directed run with a faulty spare,
+the repair table holds the failing address twice (Section~\ref{sec:resB}) and the readback is
+still clean, because the second entry maps the word to a good spare.
 
 \section{Discussion}
 \label{sec:disc}
@@ -426,13 +450,14 @@ qualify the testbench with seeded bugs, as completion-only checks kill fewer tha
 \subsection{Limitations and Open Questions}
 The study is simulation-only and uses small open-source memories; industrial MBIST adds
 programmable algorithms, shared controllers and physical address scrambling. Faults are
-behavioural; for Design~A they are single faults, so multi-fault repair (B4) was examined with
+behavioural and injected on the array, so address-decoder, linked and dynamic faults are not
+modelled; for Design~A they are single faults, so multi-fault repair (B4) was examined with
 directed tests, while Design~B was run with up to six faulty words. The golden models encode an
 interpretation of each design's intent (spares outside the tested range, repair of the first $R$
-distinct addresses). Design~B's seeded-bug test set is small (seven tests); adding intra-word CFs
-would expose B14. Algorithm reprogramming was checked by simulation on one fault sample per
-algorithm, not proven. Open questions are a chip-level run with several MBIST instances behind one
-bus and formal equivalence between the golden model and the controller's algorithm encoding.
+distinct addresses). The seeded bugs are hand-written, 34 in total, so their rates carry wide
+intervals. Algorithm reprogramming was checked by simulation on one fault sample per
+algorithm, not proven. The chip-level run replaces the host bridge with direct bus drivers.
+Open questions are industrial-scale memories and formal equivalence between the golden model and the controller's algorithm encoding.
 
 \section{Conclusion}
 Checking only completion and the pass/fail flag gives false confidence in MBIST and repair logic.
@@ -456,6 +481,9 @@ responsibility for it.
 \bibitem{vandegoor1996} A.~J. van de Goor, G.~N. Gaydadjiev, V.~N. Yarmolik, and V.~G. Mikitjuk, ``March LR: A test for realistic linked faults,'' in \emph{Proc. IEEE VLSI Test Symp.}, 1996.
 \bibitem{alharbi2003} S.~M. Al-Harbi and S.~K. Gupta, ``Generating complete and optimal March tests for linked faults in memories,'' in \emph{Proc. IEEE VLSI Test Symp.}, 2003.
 \bibitem{vandegoor1994} A.~J. van de Goor and B.~Smit, ``Automating the verification of memory tests,'' in \emph{Proc. IEEE VLSI Test Symp.}, 1994, pp.~312--318.
+\bibitem{roy2007} S.~K. Roy and R.~A. Parekhji, ``Modeling techniques for formal verification of BIST controllers and their integration into SOC designs,'' in \emph{Proc. Int. Conf. VLSI Design}, 2007, doi:10.1109/VLSID.2007.112.
+\bibitem{daga2015} A.~Daga and B.~Nadeau-Dostie, ``Formal and assertion-based verification of MBIST MCPs,'' \emph{Verification Horizons}, vol.~11, no.~2, Jun. 2015.
+\bibitem{huang2015} K.~Huang, P.~Zhu, R.~Yan, and X.~Yan, ``Functional testbench qualification by mutation analysis,'' \emph{VLSI Design}, vol.~2015, 2015, doi:10.1155/2015/256474.
 \bibitem{kumar2021} A.~Kumar, ``Assertion based functional verification of March algorithm based MBIST controller,'' arXiv:2106.11461, 2021.
 \bibitem{tulsyan2026} S.~Tulsyan, V.~Pillai~A, M.~Jalasutram, P.~Sinha, and M.~Parasrampuria, ``Physical design aware verification methodology for closing coverage gaps in SharedBus MBIST,'' IEEE, 2026, IEEE Xplore doc.~11646504.
 \bibitem{sontakke2024} V.~Sontakke and D.~Atchina, ``Memory built-in self-repair and correction for improving yield: A review,'' \emph{Int. J. Electrical and Computer Engineering}, vol.~14, no.~1, pp.~140--156, 2024.
