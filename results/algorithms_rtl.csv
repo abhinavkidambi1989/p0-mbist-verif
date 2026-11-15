@@ -1,0 +1,1289 @@
+algorithm,class,fault,golden_detect,dut_detect,golden_words,dut_repair,dut_done,dut_cnt,cycles,match_golden
+MATS+,SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,24389,1
+MATS+,SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,24389,1
+MATS+,SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,24389,1
+MATS+,SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,24389,1
+MATS+,SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,24389,1
+MATS+,SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,24389,1
+MATS+,SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,24389,1
+MATS+,SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,24389,1
+MATS+,SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,24389,1
+MATS+,SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,24389,1
+MATS+,SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,24389,1
+MATS+,SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,24389,1
+MATS+,SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,24389,1
+MATS+,SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,24389,1
+MATS+,SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,24389,1
+MATS+,SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,24389,1
+MATS+,SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,24389,1
+MATS+,SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,24389,1
+MATS+,SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,24389,1
+MATS+,SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,24389,1
+MATS+,SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,24389,1
+MATS+,SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,24389,1
+MATS+,SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,24389,1
+MATS+,SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,24389,1
+MATS+,TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,24389,1
+MATS+,TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,24389,1
+MATS+,TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,24389,1
+MATS+,TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,24389,1
+MATS+,TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,24389,1
+MATS+,TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,24389,1
+MATS+,TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,24389,1
+MATS+,TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,24389,1
+MATS+,TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,24389,1
+MATS+,TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,24389,1
+MATS+,TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,24389,1
+MATS+,TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,24389,1
+MATS+,TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,24389,1
+MATS+,TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,24389,1
+MATS+,TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,24389,1
+MATS+,TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,24389,1
+MATS+,TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,24389,1
+MATS+,TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,24389,1
+MATS+,TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,24389,1
+MATS+,TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,24389,1
+MATS+,TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,24389,1
+MATS+,TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,24389,1
+MATS+,TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,24389,1
+MATS+,TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,24389,1
+MATS+,TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,24389,1
+MATS+,TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,24389,1
+MATS+,TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,24389,1
+MATS+,TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,24389,1
+MATS+,TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,24389,1
+MATS+,TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,24389,1
+MATS+,TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,24389,1
+MATS+,TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,24389,1
+MATS+,TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,24389,1
+MATS+,TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,24389,1
+MATS+,TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,24389,1
+MATS+,TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,24389,1
+MATS+,TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,24389,1
+MATS+,TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,24389,1
+MATS+,TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,24389,1
+MATS+,TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,24389,1
+MATS+,TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,24389,1
+MATS+,TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,24389,1
+MATS+,TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,24389,1
+MATS+,TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,24389,1
+MATS+,TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,24389,1
+MATS+,TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,24389,1
+MATS+,TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,24389,1
+MATS+,TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,24389,1
+MATS+,CF inter-word,"CF,189,26,1,188,26,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,24389,1
+MATS+,CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,24389,1
+MATS+,CF inter-word,"CF,36,27,1,37,27,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,341,1,1,342,1,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,461,10,0,460,10,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,228,1,1,229,1,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,306,16,1,307,16,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,24389,1
+MATS+,CF inter-word,"CF,467,30,1,468,30,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,110,14,1,109,14,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,357,25,1,358,25,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,131,11,1,132,11,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,24389,1
+MATS+,CF inter-word,"CF,473,18,1,472,18,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,24389,1
+MATS+,CF inter-word,"CF,406,13,1,407,13,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,315,18,1,316,18,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,24389,1
+MATS+,CF inter-word,"CF,181,21,1,182,21,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,24389,1
+MATS+,CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,24389,1
+MATS+,CF inter-word,"CF,111,15,1,112,15,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,24389,1
+MATS+,CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,24389,1
+MATS+,CF inter-word,"CF,134,3,0,133,3,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,434,25,1,435,25,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,166,23,1,167,23,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,472,30,1,471,30,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,24389,1
+MATS+,CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,24389,1
+MATS+,CF inter-word,"CF,184,9,1,183,9,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,24389,1
+MATS+,CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,24389,1
+MATS+,CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,24389,1
+MATS+,CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,24389,1
+MATS+,CF inter-word,"CF,503,27,1,504,27,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,24389,1
+MATS+,CF inter-word,"CF,62,11,1,63,11,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,24389,1
+MATS+,CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,24389,1
+MATS+,CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,24389,1
+MATS+,CF inter-word,"CF,469,12,0,468,12,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,189,11,0,188,11,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,24389,1
+MATS+,CF inter-word,"CF,70,2,1,71,2,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,247,21,1,246,21,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,24389,1
+MATS+,CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,24389,1
+MATS+,CF inter-word,"CF,226,25,1,227,25,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,74,17,0,73,17,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,24389,1
+MATS+,CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,24389,1
+MATS+,CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,24389,1
+MATS+,CF inter-word,"CF,10,1,0,9,1,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,488,6,1,489,6,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,24389,1
+MATS+,CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,24389,1
+MATS+,CF inter-word,"CF,66,31,1,67,31,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,24389,1
+MATS+,CF inter-word,"CF,401,9,1,402,9,1",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,24389,1
+MATS+,CF inter-word,"CF,278,31,1,279,31,0",0,0,,,1,0,24387,1
+MATS+,CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,24389,1
+MATS+,CF intra-word,"CF,324,16,0,324,17,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,102,4,1,102,5,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,24389,1
+MATS+,CF intra-word,"CF,9,0,0,9,1,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,24389,1
+MATS+,CF intra-word,"CF,348,17,0,348,16,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,393,12,1,393,13,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,454,14,0,454,15,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,53,16,0,53,17,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,74,0,1,74,1,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,218,18,0,218,19,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,67,0,1,67,1,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,486,5,1,486,4,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,274,13,1,274,12,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,199,10,0,199,11,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,24389,1
+MATS+,CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,24389,1
+MATS+,CF intra-word,"CF,445,10,0,445,11,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,24389,1
+MATS+,CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,24389,1
+MATS+,CF intra-word,"CF,121,30,1,121,31,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,130,7,1,130,6,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,24389,1
+MATS+,CF intra-word,"CF,317,15,1,317,14,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,252,22,1,252,23,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,306,29,1,306,28,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,101,13,1,101,12,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,181,16,1,181,17,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,37,23,1,37,22,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,24389,1
+MATS+,CF intra-word,"CF,265,4,0,265,5,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,24389,1
+MATS+,CF intra-word,"CF,489,14,1,489,15,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,166,14,0,166,15,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,24389,1
+MATS+,CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,24389,1
+MATS+,CF intra-word,"CF,318,21,1,318,20,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,24389,1
+MATS+,CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,24389,1
+MATS+,CF intra-word,"CF,12,0,0,12,1,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,136,26,0,136,27,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,336,16,0,336,17,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,423,8,1,423,9,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,53,1,1,53,0,1",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,24389,1
+MATS+,CF intra-word,"CF,309,15,0,309,14,0",0,0,,,1,0,24387,1
+MATS+,CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,24389,1
+MATS+,CF intra-word,"CF,180,17,1,180,16,1",0,0,,,1,0,24387,1
+March X,SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,32517,1
+March X,SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,32517,1
+March X,SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,32517,1
+March X,SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,32517,1
+March X,SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,32517,1
+March X,SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,32517,1
+March X,SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,32517,1
+March X,SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,32517,1
+March X,SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,32517,1
+March X,SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,32517,1
+March X,SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,32517,1
+March X,SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,32517,1
+March X,SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,32517,1
+March X,SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,32517,1
+March X,SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,32517,1
+March X,SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,32517,1
+March X,SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,32517,1
+March X,SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,32517,1
+March X,SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,32517,1
+March X,SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,32517,1
+March X,SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,32517,1
+March X,SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,32517,1
+March X,SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,32517,1
+March X,SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,32517,1
+March X,TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,32517,1
+March X,TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,32517,1
+March X,TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,32517,1
+March X,TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,32517,1
+March X,TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,32517,1
+March X,TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,32517,1
+March X,TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,32517,1
+March X,TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,32517,1
+March X,TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,32517,1
+March X,TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,32517,1
+March X,TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,32517,1
+March X,TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,32517,1
+March X,TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,32517,1
+March X,TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,32517,1
+March X,TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,32517,1
+March X,TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,32517,1
+March X,TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,32517,1
+March X,TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,32517,1
+March X,TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,32517,1
+March X,TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,32517,1
+March X,TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,32517,1
+March X,TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,32517,1
+March X,TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,32517,1
+March X,TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,32517,1
+March X,TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,32517,1
+March X,TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,32517,1
+March X,TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,32517,1
+March X,TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,32517,1
+March X,TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,32517,1
+March X,TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,32517,1
+March X,TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,32517,1
+March X,TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,32517,1
+March X,TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,32517,1
+March X,TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,32517,1
+March X,TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,32517,1
+March X,TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,32517,1
+March X,TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,32517,1
+March X,TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,32517,1
+March X,TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,32517,1
+March X,TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,32517,1
+March X,TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,32517,1
+March X,TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,32517,1
+March X,TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,32517,1
+March X,TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,32517,1
+March X,TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,32517,1
+March X,TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,32517,1
+March X,TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,32517,1
+March X,TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,32517,1
+March X,CF inter-word,"CF,189,26,1,188,26,0",1,1,189,189,1,1,32517,1
+March X,CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,32517,1
+March X,CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,32517,1
+March X,CF inter-word,"CF,36,27,1,37,27,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,341,1,1,342,1,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,228,1,1,229,1,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,461,10,0,460,10,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,306,16,1,307,16,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,32517,1
+March X,CF inter-word,"CF,467,30,1,468,30,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,110,14,1,109,14,0",1,1,110,110,1,1,32517,1
+March X,CF inter-word,"CF,357,25,1,358,25,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,131,11,1,132,11,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,32517,1
+March X,CF inter-word,"CF,473,18,1,472,18,0",1,1,473,473,1,1,32517,1
+March X,CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,32517,1
+March X,CF inter-word,"CF,406,13,1,407,13,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,315,18,1,316,18,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,32517,1
+March X,CF inter-word,"CF,181,21,1,182,21,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,32517,1
+March X,CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,32517,1
+March X,CF inter-word,"CF,111,15,1,112,15,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,32517,1
+March X,CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,32517,1
+March X,CF inter-word,"CF,134,3,0,133,3,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,434,25,1,435,25,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,166,23,1,167,23,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,472,30,1,471,30,0",1,1,472,472,1,1,32517,1
+March X,CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,32517,1
+March X,CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,32517,1
+March X,CF inter-word,"CF,184,9,1,183,9,0",1,1,184,184,1,1,32517,1
+March X,CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,32517,1
+March X,CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,32517,1
+March X,CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,32517,1
+March X,CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,32517,1
+March X,CF inter-word,"CF,62,11,1,63,11,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,503,27,1,504,27,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,32517,1
+March X,CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,32517,1
+March X,CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,32517,1
+March X,CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,32517,1
+March X,CF inter-word,"CF,189,11,0,188,11,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,469,12,0,468,12,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,32517,1
+March X,CF inter-word,"CF,70,2,1,71,2,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,247,21,1,246,21,0",1,1,247,247,1,1,32517,1
+March X,CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,32517,1
+March X,CF inter-word,"CF,226,25,1,227,25,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,32517,1
+March X,CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,32517,1
+March X,CF inter-word,"CF,74,17,0,73,17,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,32517,1
+March X,CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,32517,1
+March X,CF inter-word,"CF,10,1,0,9,1,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,488,6,1,489,6,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,32517,1
+March X,CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,32517,1
+March X,CF inter-word,"CF,66,31,1,67,31,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,32517,1
+March X,CF inter-word,"CF,278,31,1,279,31,0",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,401,9,1,402,9,1",0,0,,,1,0,32515,1
+March X,CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,32517,1
+March X,CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,32517,1
+March X,CF intra-word,"CF,324,16,0,324,17,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,102,4,1,102,5,0",1,1,102,102,1,1,32517,1
+March X,CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,32517,1
+March X,CF intra-word,"CF,9,0,0,9,1,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,32517,1
+March X,CF intra-word,"CF,393,12,1,393,13,0",1,1,393,393,1,1,32517,1
+March X,CF intra-word,"CF,348,17,0,348,16,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,454,14,0,454,15,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,53,16,0,53,17,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,218,18,0,218,19,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,74,0,1,74,1,0",1,1,74,74,1,1,32517,1
+March X,CF intra-word,"CF,67,0,1,67,1,0",1,1,67,67,1,1,32517,1
+March X,CF intra-word,"CF,274,13,1,274,12,0",1,1,274,274,1,1,32517,1
+March X,CF intra-word,"CF,486,5,1,486,4,0",1,1,486,486,1,1,32517,1
+March X,CF intra-word,"CF,199,10,0,199,11,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,32517,1
+March X,CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,32517,1
+March X,CF intra-word,"CF,445,10,0,445,11,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,32517,1
+March X,CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,32517,1
+March X,CF intra-word,"CF,121,30,1,121,31,0",1,1,121,121,1,1,32517,1
+March X,CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,32517,1
+March X,CF intra-word,"CF,130,7,1,130,6,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,317,15,1,317,14,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,252,22,1,252,23,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,306,29,1,306,28,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,101,13,1,101,12,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,181,16,1,181,17,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,37,23,1,37,22,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,32517,1
+March X,CF intra-word,"CF,265,4,0,265,5,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,32517,1
+March X,CF intra-word,"CF,489,14,1,489,15,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,32517,1
+March X,CF intra-word,"CF,166,14,0,166,15,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,32517,1
+March X,CF intra-word,"CF,318,21,1,318,20,0",1,1,318,318,1,1,32517,1
+March X,CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,32517,1
+March X,CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,32517,1
+March X,CF intra-word,"CF,12,0,0,12,1,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,136,26,0,136,27,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,336,16,0,336,17,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,423,8,1,423,9,0",1,1,423,423,1,1,32517,1
+March X,CF intra-word,"CF,53,1,1,53,0,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,309,15,0,309,14,0",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,32517,1
+March X,CF intra-word,"CF,180,17,1,180,16,1",0,0,,,1,0,32515,1
+March X,CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,32517,1
+March Y,SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,32521,1
+March Y,SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,32517,1
+March Y,SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,32521,1
+March Y,SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,32521,1
+March Y,SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,32517,1
+March Y,SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,32517,1
+March Y,SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,32517,1
+March Y,SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,32517,1
+March Y,SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,32521,1
+March Y,SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,32521,1
+March Y,SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,32517,1
+March Y,SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,32517,1
+March Y,SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,32517,1
+March Y,SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,32517,1
+March Y,SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,32521,1
+March Y,SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,32517,1
+March Y,SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,32521,1
+March Y,SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,32521,1
+March Y,SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,32521,1
+March Y,SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,32521,1
+March Y,SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,32517,1
+March Y,SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,32517,1
+March Y,SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,32521,1
+March Y,SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,32521,1
+March Y,TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,32521,1
+March Y,TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,32521,1
+March Y,TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,32521,1
+March Y,TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,32521,1
+March Y,TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,32521,1
+March Y,TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,32521,1
+March Y,TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,32521,1
+March Y,TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,32521,1
+March Y,TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,32521,1
+March Y,TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,32521,1
+March Y,TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,32521,1
+March Y,TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,32521,1
+March Y,TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,32521,1
+March Y,TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,32521,1
+March Y,TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,32521,1
+March Y,TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,32521,1
+March Y,TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,32521,1
+March Y,TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,32521,1
+March Y,TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,32521,1
+March Y,TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,32521,1
+March Y,TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,32521,1
+March Y,TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,32521,1
+March Y,TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,32521,1
+March Y,TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,32521,1
+March Y,TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,32521,1
+March Y,TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,32521,1
+March Y,TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,32521,1
+March Y,TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,32521,1
+March Y,TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,32521,1
+March Y,TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,32521,1
+March Y,TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,32521,1
+March Y,TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,32521,1
+March Y,TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,32521,1
+March Y,TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,32521,1
+March Y,TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,32521,1
+March Y,TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,32521,1
+March Y,TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,32521,1
+March Y,TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,32521,1
+March Y,TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,32521,1
+March Y,TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,32521,1
+March Y,TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,32521,1
+March Y,TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,32521,1
+March Y,TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,32521,1
+March Y,TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,32521,1
+March Y,TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,32521,1
+March Y,TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,32521,1
+March Y,TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,32521,1
+March Y,CF inter-word,"CF,189,26,1,188,26,0",1,1,189,189,1,1,32517,1
+March Y,TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,32521,1
+March Y,CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,32517,1
+March Y,CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,32517,1
+March Y,CF inter-word,"CF,36,27,1,37,27,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,341,1,1,342,1,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,461,10,0,460,10,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,228,1,1,229,1,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,306,16,1,307,16,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,32517,1
+March Y,CF inter-word,"CF,467,30,1,468,30,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,110,14,1,109,14,0",1,1,110,110,1,1,32517,1
+March Y,CF inter-word,"CF,357,25,1,358,25,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,131,11,1,132,11,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,473,18,1,472,18,0",1,1,473,473,1,1,32517,1
+March Y,CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,32517,1
+March Y,CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,32517,1
+March Y,CF inter-word,"CF,406,13,1,407,13,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,32517,1
+March Y,CF inter-word,"CF,315,18,1,316,18,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,32517,1
+March Y,CF inter-word,"CF,181,21,1,182,21,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,111,15,1,112,15,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,32517,1
+March Y,CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,32517,1
+March Y,CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,32517,1
+March Y,CF inter-word,"CF,434,25,1,435,25,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,134,3,0,133,3,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,166,23,1,167,23,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,472,30,1,471,30,0",1,1,472,472,1,1,32517,1
+March Y,CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,32517,1
+March Y,CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,32517,1
+March Y,CF inter-word,"CF,184,9,1,183,9,0",1,1,184,184,1,1,32517,1
+March Y,CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,32517,1
+March Y,CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,32517,1
+March Y,CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,32517,1
+March Y,CF inter-word,"CF,503,27,1,504,27,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,32517,1
+March Y,CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,32517,1
+March Y,CF inter-word,"CF,62,11,1,63,11,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,32517,1
+March Y,CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,32517,1
+March Y,CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,32517,1
+March Y,CF inter-word,"CF,469,12,0,468,12,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,32517,1
+March Y,CF inter-word,"CF,189,11,0,188,11,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,70,2,1,71,2,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,247,21,1,246,21,0",1,1,247,247,1,1,32517,1
+March Y,CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,32517,1
+March Y,CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,32517,1
+March Y,CF inter-word,"CF,226,25,1,227,25,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,74,17,0,73,17,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,32517,1
+March Y,CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,32517,1
+March Y,CF inter-word,"CF,10,1,0,9,1,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,32517,1
+March Y,CF inter-word,"CF,488,6,1,489,6,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,32517,1
+March Y,CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,32517,1
+March Y,CF inter-word,"CF,66,31,1,67,31,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,401,9,1,402,9,1",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,32517,1
+March Y,CF inter-word,"CF,278,31,1,279,31,0",0,0,,,1,0,32515,1
+March Y,CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,32517,1
+March Y,CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,32517,1
+March Y,CF intra-word,"CF,324,16,0,324,17,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,102,4,1,102,5,0",1,1,102,102,1,1,32521,1
+March Y,CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,32521,1
+March Y,CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,32521,1
+March Y,CF intra-word,"CF,9,0,0,9,1,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,393,12,1,393,13,0",1,1,393,393,1,1,32521,1
+March Y,CF intra-word,"CF,348,17,0,348,16,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,454,14,0,454,15,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,53,16,0,53,17,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,218,18,0,218,19,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,74,0,1,74,1,0",1,1,74,74,1,1,32521,1
+March Y,CF intra-word,"CF,67,0,1,67,1,0",1,1,67,67,1,1,32521,1
+March Y,CF intra-word,"CF,486,5,1,486,4,0",1,1,486,486,1,1,32521,1
+March Y,CF intra-word,"CF,274,13,1,274,12,0",1,1,274,274,1,1,32521,1
+March Y,CF intra-word,"CF,199,10,0,199,11,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,32521,1
+March Y,CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,32521,1
+March Y,CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,32521,1
+March Y,CF intra-word,"CF,445,10,0,445,11,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,121,30,1,121,31,0",1,1,121,121,1,1,32521,1
+March Y,CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,32521,1
+March Y,CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,32521,1
+March Y,CF intra-word,"CF,130,7,1,130,6,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,252,22,1,252,23,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,317,15,1,317,14,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,306,29,1,306,28,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,101,13,1,101,12,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,37,23,1,37,22,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,181,16,1,181,17,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,265,4,0,265,5,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,32521,1
+March Y,CF intra-word,"CF,489,14,1,489,15,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,32521,1
+March Y,CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,32521,1
+March Y,CF intra-word,"CF,166,14,0,166,15,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,32521,1
+March Y,CF intra-word,"CF,318,21,1,318,20,0",1,1,318,318,1,1,32521,1
+March Y,CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,32521,1
+March Y,CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,32521,1
+March Y,CF intra-word,"CF,12,0,0,12,1,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,136,26,0,136,27,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,336,16,0,336,17,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,423,8,1,423,9,0",1,1,423,423,1,1,32521,1
+March Y,CF intra-word,"CF,53,1,1,53,0,1",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,309,15,0,309,14,0",0,0,,,1,0,32515,1
+March Y,CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,32521,1
+March Y,CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,32521,1
+March Y,CF intra-word,"CF,180,17,1,180,16,1",0,0,,,1,0,32515,1
+March C-,SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,48773,1
+March C-,SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,48773,1
+March C-,SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,48773,1
+March C-,SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,48773,1
+March C-,SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,48773,1
+March C-,SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,48773,1
+March C-,SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,48773,1
+March C-,SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,48773,1
+March C-,SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,48773,1
+March C-,SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,48773,1
+March C-,SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,48773,1
+March C-,SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,48773,1
+March C-,SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,48773,1
+March C-,SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,48773,1
+March C-,SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,48773,1
+March C-,SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,48773,1
+March C-,SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,48773,1
+March C-,SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,48773,1
+March C-,SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,48773,1
+March C-,SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,48773,1
+March C-,SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,48773,1
+March C-,SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,48773,1
+March C-,SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,48773,1
+March C-,SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,48773,1
+March C-,TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,48773,1
+March C-,TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,48773,1
+March C-,TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,48773,1
+March C-,TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,48773,1
+March C-,TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,48773,1
+March C-,TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,48773,1
+March C-,TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,48773,1
+March C-,TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,48773,1
+March C-,TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,48773,1
+March C-,TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,48773,1
+March C-,TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,48773,1
+March C-,TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,48773,1
+March C-,TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,48773,1
+March C-,TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,48773,1
+March C-,TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,48773,1
+March C-,TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,48773,1
+March C-,TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,48773,1
+March C-,TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,48773,1
+March C-,TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,48773,1
+March C-,TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,48773,1
+March C-,TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,48773,1
+March C-,TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,48773,1
+March C-,TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,48773,1
+March C-,TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,48773,1
+March C-,TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,48773,1
+March C-,TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,48773,1
+March C-,TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,48773,1
+March C-,TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,48773,1
+March C-,TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,48773,1
+March C-,TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,48773,1
+March C-,TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,48773,1
+March C-,TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,48773,1
+March C-,TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,48773,1
+March C-,TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,48773,1
+March C-,TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,48773,1
+March C-,TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,48773,1
+March C-,TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,48773,1
+March C-,TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,48773,1
+March C-,TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,48773,1
+March C-,TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,48773,1
+March C-,TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,48773,1
+March C-,TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,48773,1
+March C-,TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,48773,1
+March C-,TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,48773,1
+March C-,TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,48773,1
+March C-,TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,48773,1
+March C-,TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,48773,1
+March C-,TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,48773,1
+March C-,CF inter-word,"CF,189,26,1,188,26,0",1,1,189,189,1,1,48773,1
+March C-,CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,48773,1
+March C-,CF inter-word,"CF,36,27,1,37,27,0",1,1,36,36,1,1,48773,1
+March C-,CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,48773,1
+March C-,CF inter-word,"CF,341,1,1,342,1,1",1,1,341,341,1,1,48773,1
+March C-,CF inter-word,"CF,461,10,0,460,10,1",1,1,461,461,1,1,48773,1
+March C-,CF inter-word,"CF,228,1,1,229,1,1",1,1,228,228,1,1,48773,1
+March C-,CF inter-word,"CF,306,16,1,307,16,1",1,1,306,306,1,1,48773,1
+March C-,CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,48773,1
+March C-,CF inter-word,"CF,467,30,1,468,30,0",1,1,467,467,1,1,48773,1
+March C-,CF inter-word,"CF,110,14,1,109,14,0",1,1,110,110,1,1,48773,1
+March C-,CF inter-word,"CF,357,25,1,358,25,1",1,1,357,357,1,1,48773,1
+March C-,CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,48773,1
+March C-,CF inter-word,"CF,131,11,1,132,11,0",1,1,131,131,1,1,48773,1
+March C-,CF inter-word,"CF,473,18,1,472,18,0",1,1,473,473,1,1,48773,1
+March C-,CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,48773,1
+March C-,CF inter-word,"CF,315,18,1,316,18,1",1,1,315,315,1,1,48773,1
+March C-,CF inter-word,"CF,406,13,1,407,13,0",1,1,406,406,1,1,48773,1
+March C-,CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,48773,1
+March C-,CF inter-word,"CF,181,21,1,182,21,1",1,1,181,181,1,1,48773,1
+March C-,CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,48773,1
+March C-,CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,48773,1
+March C-,CF inter-word,"CF,111,15,1,112,15,1",1,1,111,111,1,1,48773,1
+March C-,CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,48773,1
+March C-,CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,48773,1
+March C-,CF inter-word,"CF,134,3,0,133,3,1",1,1,134,134,1,1,48773,1
+March C-,CF inter-word,"CF,434,25,1,435,25,1",1,1,434,434,1,1,48773,1
+March C-,CF inter-word,"CF,166,23,1,167,23,0",1,1,166,166,1,1,48773,1
+March C-,CF inter-word,"CF,472,30,1,471,30,0",1,1,472,472,1,1,48773,1
+March C-,CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,48773,1
+March C-,CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,48773,1
+March C-,CF inter-word,"CF,184,9,1,183,9,0",1,1,184,184,1,1,48773,1
+March C-,CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,48773,1
+March C-,CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,48773,1
+March C-,CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,48773,1
+March C-,CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,48773,1
+March C-,CF inter-word,"CF,503,27,1,504,27,0",1,1,503,503,1,1,48773,1
+March C-,CF inter-word,"CF,62,11,1,63,11,1",1,1,62,62,1,1,48773,1
+March C-,CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,48773,1
+March C-,CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,48773,1
+March C-,CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,48773,1
+March C-,CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,48773,1
+March C-,CF inter-word,"CF,469,12,0,468,12,1",1,1,469,469,1,1,48773,1
+March C-,CF inter-word,"CF,189,11,0,188,11,1",1,1,189,189,1,1,48773,1
+March C-,CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,48773,1
+March C-,CF inter-word,"CF,70,2,1,71,2,0",1,1,70,70,1,1,48773,1
+March C-,CF inter-word,"CF,247,21,1,246,21,0",1,1,247,247,1,1,48773,1
+March C-,CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,48773,1
+March C-,CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,48773,1
+March C-,CF inter-word,"CF,226,25,1,227,25,0",1,1,226,226,1,1,48773,1
+March C-,CF inter-word,"CF,74,17,0,73,17,0",1,1,74,74,1,1,48773,1
+March C-,CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,48773,1
+March C-,CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,48773,1
+March C-,CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,48773,1
+March C-,CF inter-word,"CF,10,1,0,9,1,0",1,1,10,10,1,1,48773,1
+March C-,CF inter-word,"CF,488,6,1,489,6,0",1,1,488,488,1,1,48773,1
+March C-,CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,48773,1
+March C-,CF inter-word,"CF,66,31,1,67,31,1",1,1,66,66,1,1,48773,1
+March C-,CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,48773,1
+March C-,CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,48773,1
+March C-,CF inter-word,"CF,401,9,1,402,9,1",1,1,401,401,1,1,48773,1
+March C-,CF inter-word,"CF,278,31,1,279,31,0",1,1,278,278,1,1,48773,1
+March C-,CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,48773,1
+March C-,CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,48773,1
+March C-,CF intra-word,"CF,324,16,0,324,17,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,102,4,1,102,5,0",1,1,102,102,1,1,48773,1
+March C-,CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,48773,1
+March C-,CF intra-word,"CF,9,0,0,9,1,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,48773,1
+March C-,CF intra-word,"CF,348,17,0,348,16,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,393,12,1,393,13,0",1,1,393,393,1,1,48773,1
+March C-,CF intra-word,"CF,454,14,0,454,15,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,53,16,0,53,17,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,218,18,0,218,19,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,67,0,1,67,1,0",1,1,67,67,1,1,48773,1
+March C-,CF intra-word,"CF,74,0,1,74,1,0",1,1,74,74,1,1,48773,1
+March C-,CF intra-word,"CF,486,5,1,486,4,0",1,1,486,486,1,1,48773,1
+March C-,CF intra-word,"CF,199,10,0,199,11,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,48773,1
+March C-,CF intra-word,"CF,274,13,1,274,12,0",1,1,274,274,1,1,48773,1
+March C-,CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,48773,1
+March C-,CF intra-word,"CF,445,10,0,445,11,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,48773,1
+March C-,CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,48773,1
+March C-,CF intra-word,"CF,121,30,1,121,31,0",1,1,121,121,1,1,48773,1
+March C-,CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,48773,1
+March C-,CF intra-word,"CF,130,7,1,130,6,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,317,15,1,317,14,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,252,22,1,252,23,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,306,29,1,306,28,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,181,16,1,181,17,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,101,13,1,101,12,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,37,23,1,37,22,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,48773,1
+March C-,CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,48773,1
+March C-,CF intra-word,"CF,265,4,0,265,5,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,489,14,1,489,15,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,166,14,0,166,15,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,48773,1
+March C-,CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,48773,1
+March C-,CF intra-word,"CF,318,21,1,318,20,0",1,1,318,318,1,1,48773,1
+March C-,CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,48773,1
+March C-,CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,48773,1
+March C-,CF intra-word,"CF,12,0,0,12,1,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,136,26,0,136,27,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,336,16,0,336,17,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,423,8,1,423,9,0",1,1,423,423,1,1,48773,1
+March C-,CF intra-word,"CF,309,15,0,309,14,0",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,53,1,1,53,0,1",0,0,,,1,0,48771,1
+March C-,CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,48773,1
+March C-,CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,48773,1
+March C-,CF intra-word,"CF,180,17,1,180,16,1",0,0,,,1,0,48771,1
+March LR,SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,48773,1
+March LR,SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,48773,1
+March LR,SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,48773,1
+March LR,SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,48773,1
+March LR,SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,48773,1
+March LR,SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,48773,1
+March LR,SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,48773,1
+March LR,SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,48773,1
+March LR,SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,48773,1
+March LR,SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,48773,1
+March LR,SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,48773,1
+March LR,SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,48773,1
+March LR,SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,48773,1
+March LR,SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,48773,1
+March LR,SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,48773,1
+March LR,SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,48773,1
+March LR,SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,48773,1
+March LR,SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,48773,1
+March LR,SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,48773,1
+March LR,SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,48773,1
+March LR,SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,48773,1
+March LR,SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,48773,1
+March LR,SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,48773,1
+March LR,SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,48773,1
+March LR,TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,48773,1
+March LR,TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,48773,1
+March LR,TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,48773,1
+March LR,TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,48777,1
+March LR,TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,48773,1
+March LR,TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,48777,1
+March LR,TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,48777,1
+March LR,TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,48777,1
+March LR,TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,48773,1
+March LR,TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,48773,1
+March LR,TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,48777,1
+March LR,TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,48773,1
+March LR,TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,48773,1
+March LR,TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,48773,1
+March LR,TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,48777,1
+March LR,TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,48773,1
+March LR,TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,48777,1
+March LR,TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,48773,1
+March LR,TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,48773,1
+March LR,TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,48777,1
+March LR,TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,48773,1
+March LR,TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,48777,1
+March LR,TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,48773,1
+March LR,TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,48773,1
+March LR,TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,48773,1
+March LR,TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,48777,1
+March LR,TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,48777,1
+March LR,TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,48777,1
+March LR,TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,48773,1
+March LR,TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,48777,1
+March LR,TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,48773,1
+March LR,TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,48773,1
+March LR,TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,48773,1
+March LR,TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,48777,1
+March LR,TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,48777,1
+March LR,TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,48773,1
+March LR,TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,48777,1
+March LR,TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,48777,1
+March LR,TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,48777,1
+March LR,TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,48773,1
+March LR,TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,48777,1
+March LR,TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,48773,1
+March LR,TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,48777,1
+March LR,TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,48773,1
+March LR,TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,48777,1
+March LR,TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,48773,1
+March LR,TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,48777,1
+March LR,TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,48777,1
+March LR,CF inter-word,"CF,189,26,1,188,26,0",1,1,189,189,1,1,48773,1
+March LR,CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,48773,1
+March LR,CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,48773,1
+March LR,CF inter-word,"CF,36,27,1,37,27,0",1,1,36,36,1,1,48773,1
+March LR,CF inter-word,"CF,341,1,1,342,1,1",1,1,341,341,1,1,48773,1
+March LR,CF inter-word,"CF,461,10,0,460,10,1",1,1,461,461,1,1,48773,1
+March LR,CF inter-word,"CF,228,1,1,229,1,1",1,1,228,228,1,1,48773,1
+March LR,CF inter-word,"CF,306,16,1,307,16,1",1,1,306,306,1,1,48773,1
+March LR,CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,48773,1
+March LR,CF inter-word,"CF,467,30,1,468,30,0",1,1,467,467,1,1,48773,1
+March LR,CF inter-word,"CF,110,14,1,109,14,0",1,1,110,110,1,1,48773,1
+March LR,CF inter-word,"CF,357,25,1,358,25,1",1,1,357,357,1,1,48773,1
+March LR,CF inter-word,"CF,131,11,1,132,11,0",1,1,131,131,1,1,48773,1
+March LR,CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,48773,1
+March LR,CF inter-word,"CF,473,18,1,472,18,0",1,1,473,473,1,1,48773,1
+March LR,CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,48773,1
+March LR,CF inter-word,"CF,406,13,1,407,13,0",1,1,406,406,1,1,48773,1
+March LR,CF inter-word,"CF,315,18,1,316,18,1",1,1,315,315,1,1,48773,1
+March LR,CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,48773,1
+March LR,CF inter-word,"CF,181,21,1,182,21,1",1,1,181,181,1,1,48773,1
+March LR,CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,48773,1
+March LR,CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,48773,1
+March LR,CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,48773,1
+March LR,CF inter-word,"CF,111,15,1,112,15,1",1,1,111,111,1,1,48773,1
+March LR,CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,48773,1
+March LR,CF inter-word,"CF,134,3,0,133,3,1",1,1,134,134,1,1,48773,1
+March LR,CF inter-word,"CF,434,25,1,435,25,1",1,1,434,434,1,1,48773,1
+March LR,CF inter-word,"CF,472,30,1,471,30,0",1,1,472,472,1,1,48773,1
+March LR,CF inter-word,"CF,166,23,1,167,23,0",1,1,166,166,1,1,48773,1
+March LR,CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,48773,1
+March LR,CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,48773,1
+March LR,CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,48773,1
+March LR,CF inter-word,"CF,184,9,1,183,9,0",1,1,184,184,1,1,48773,1
+March LR,CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,48773,1
+March LR,CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,48773,1
+March LR,CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,48773,1
+March LR,CF inter-word,"CF,503,27,1,504,27,0",1,1,503,503,1,1,48773,1
+March LR,CF inter-word,"CF,62,11,1,63,11,1",1,1,62,62,1,1,48773,1
+March LR,CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,48773,1
+March LR,CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,48773,1
+March LR,CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,48773,1
+March LR,CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,48773,1
+March LR,CF inter-word,"CF,469,12,0,468,12,1",1,1,469,469,1,1,48773,1
+March LR,CF inter-word,"CF,189,11,0,188,11,1",1,1,189,189,1,1,48773,1
+March LR,CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,48773,1
+March LR,CF inter-word,"CF,70,2,1,71,2,0",1,1,70,70,1,1,48773,1
+March LR,CF inter-word,"CF,247,21,1,246,21,0",1,1,247,247,1,1,48773,1
+March LR,CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,48773,1
+March LR,CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,48773,1
+March LR,CF inter-word,"CF,226,25,1,227,25,0",1,1,226,226,1,1,48773,1
+March LR,CF inter-word,"CF,74,17,0,73,17,0",1,1,74,74,1,1,48773,1
+March LR,CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,48773,1
+March LR,CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,48773,1
+March LR,CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,48773,1
+March LR,CF inter-word,"CF,10,1,0,9,1,0",1,1,10,10,1,1,48773,1
+March LR,CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,48773,1
+March LR,CF inter-word,"CF,488,6,1,489,6,0",1,1,488,488,1,1,48773,1
+March LR,CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,48773,1
+March LR,CF inter-word,"CF,66,31,1,67,31,1",1,1,66,66,1,1,48773,1
+March LR,CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,48773,1
+March LR,CF inter-word,"CF,401,9,1,402,9,1",1,1,401,401,1,1,48773,1
+March LR,CF inter-word,"CF,278,31,1,279,31,0",1,1,278,278,1,1,48773,1
+March LR,CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,48773,1
+March LR,CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,48773,1
+March LR,CF intra-word,"CF,324,16,0,324,17,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,102,4,1,102,5,0",1,1,102,102,1,1,48777,1
+March LR,CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,48773,1
+March LR,CF intra-word,"CF,9,0,0,9,1,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,48773,1
+March LR,CF intra-word,"CF,393,12,1,393,13,0",1,1,393,393,1,1,48777,1
+March LR,CF intra-word,"CF,348,17,0,348,16,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,454,14,0,454,15,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,53,16,0,53,17,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,218,18,0,218,19,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,74,0,1,74,1,0",1,1,74,74,1,1,48777,1
+March LR,CF intra-word,"CF,67,0,1,67,1,0",1,1,67,67,1,1,48777,1
+March LR,CF intra-word,"CF,486,5,1,486,4,0",1,1,486,486,1,1,48777,1
+March LR,CF intra-word,"CF,274,13,1,274,12,0",1,1,274,274,1,1,48777,1
+March LR,CF intra-word,"CF,199,10,0,199,11,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,48773,1
+March LR,CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,48773,1
+March LR,CF intra-word,"CF,445,10,0,445,11,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,48773,1
+March LR,CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,48773,1
+March LR,CF intra-word,"CF,121,30,1,121,31,0",1,1,121,121,1,1,48777,1
+March LR,CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,48773,1
+March LR,CF intra-word,"CF,317,15,1,317,14,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,130,7,1,130,6,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,252,22,1,252,23,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,306,29,1,306,28,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,101,13,1,101,12,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,181,16,1,181,17,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,37,23,1,37,22,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,48773,1
+March LR,CF intra-word,"CF,265,4,0,265,5,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,48773,1
+March LR,CF intra-word,"CF,489,14,1,489,15,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,48773,1
+March LR,CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,48773,1
+March LR,CF intra-word,"CF,166,14,0,166,15,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,318,21,1,318,20,0",1,1,318,318,1,1,48777,1
+March LR,CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,48773,1
+March LR,CF intra-word,"CF,12,0,0,12,1,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,48773,1
+March LR,CF intra-word,"CF,136,26,0,136,27,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,336,16,0,336,17,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,423,8,1,423,9,0",1,1,423,423,1,1,48777,1
+March LR,CF intra-word,"CF,53,1,1,53,0,1",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,309,15,0,309,14,0",0,0,,,1,0,48771,1
+March LR,CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,48773,1
+March LR,CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,48773,1
+March LR,CF intra-word,"CF,180,17,1,180,16,1",0,0,,,1,0,48771,1
+"March C-, 4 bg.",SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,97541,1
+"March C-, 4 bg.",SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,97541,1
+"March C-, 4 bg.",TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,189,26,1,188,26,0",1,1,189,189,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,36,27,1,37,27,0",1,1,36,36,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,341,1,1,342,1,1",1,1,341,341,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,461,10,0,460,10,1",1,1,461,461,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,228,1,1,229,1,1",1,1,228,228,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,306,16,1,307,16,1",1,1,306,306,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,467,30,1,468,30,0",1,1,467,467,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,110,14,1,109,14,0",1,1,110,110,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,357,25,1,358,25,1",1,1,357,357,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,131,11,1,132,11,0",1,1,131,131,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,473,18,1,472,18,0",1,1,473,473,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,406,13,1,407,13,0",1,1,406,406,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,315,18,1,316,18,1",1,1,315,315,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,181,21,1,182,21,1",1,1,181,181,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,111,15,1,112,15,1",1,1,111,111,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,434,25,1,435,25,1",1,1,434,434,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,134,3,0,133,3,1",1,1,134,134,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,166,23,1,167,23,0",1,1,166,166,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,472,30,1,471,30,0",1,1,472,472,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,184,9,1,183,9,0",1,1,184,184,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,62,11,1,63,11,1",1,1,62,62,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,503,27,1,504,27,0",1,1,503,503,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,469,12,0,468,12,1",1,1,469,469,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,189,11,0,188,11,1",1,1,189,189,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,247,21,1,246,21,0",1,1,247,247,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,70,2,1,71,2,0",1,1,70,70,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,226,25,1,227,25,0",1,1,226,226,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,74,17,0,73,17,0",1,1,74,74,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,10,1,0,9,1,0",1,1,10,10,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,488,6,1,489,6,0",1,1,488,488,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,66,31,1,67,31,1",1,1,66,66,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,401,9,1,402,9,1",1,1,401,401,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,278,31,1,279,31,0",1,1,278,278,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,97541,1
+"March C-, 4 bg.",CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,324,16,0,324,17,0",1,1,324,324,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,102,4,1,102,5,0",1,1,102,102,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,9,0,0,9,1,0",1,1,9,9,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,393,12,1,393,13,0",1,1,393,393,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,348,17,0,348,16,0",1,1,348,348,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,454,14,0,454,15,0",1,1,454,454,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,53,16,0,53,17,0",1,1,53,53,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,218,18,0,218,19,0",1,1,218,218,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,74,0,1,74,1,0",1,1,74,74,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,67,0,1,67,1,0",1,1,67,67,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,486,5,1,486,4,0",1,1,486,486,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,274,13,1,274,12,0",1,1,274,274,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,199,10,0,199,11,0",1,1,199,199,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,445,10,0,445,11,0",1,1,445,445,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,121,30,1,121,31,0",1,1,121,121,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,130,7,1,130,6,1",1,1,130,130,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,317,15,1,317,14,1",1,1,317,317,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,252,22,1,252,23,1",1,1,252,252,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,306,29,1,306,28,1",1,1,306,306,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,101,13,1,101,12,1",1,1,101,101,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,181,16,1,181,17,1",1,1,181,181,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,37,23,1,37,22,1",1,1,37,37,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,265,4,0,265,5,0",1,1,265,265,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,489,14,1,489,15,1",1,1,489,489,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,166,14,0,166,15,0",1,1,166,166,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,318,21,1,318,20,0",1,1,318,318,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,12,0,0,12,1,0",1,1,12,12,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,136,26,0,136,27,0",1,1,136,136,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,336,16,0,336,17,0",1,1,336,336,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,423,8,1,423,9,0",1,1,423,423,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,53,1,1,53,0,1",1,1,53,53,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,309,15,0,309,14,0",1,1,309,309,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,180,17,1,180,16,1",1,1,180,180,1,1,97541,1
+"March C-, 4 bg.",CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,97541,1
+Default (shipped),SAF,"SAF,28,9,1,None,None,None",1,1,28,28,1,1,162565,1
+Default (shipped),SAF,"SAF,494,13,0,None,None,None",1,1,494,494,1,1,162569,1
+Default (shipped),SAF,"SAF,266,2,0,None,None,None",1,1,266,266,1,1,162565,1
+Default (shipped),SAF,"SAF,467,15,0,None,None,None",1,1,467,467,1,1,162569,1
+Default (shipped),SAF,"SAF,238,22,1,None,None,None",1,1,238,238,1,1,162569,1
+Default (shipped),SAF,"SAF,122,7,1,None,None,None",1,1,122,122,1,1,162565,1
+Default (shipped),SAF,"SAF,200,16,1,None,None,None",1,1,200,200,1,1,162569,1
+Default (shipped),SAF,"SAF,117,13,1,None,None,None",1,1,117,117,1,1,162565,1
+Default (shipped),SAF,"SAF,408,20,0,None,None,None",1,1,408,408,1,1,162565,1
+Default (shipped),SAF,"SAF,156,26,0,None,None,None",1,1,156,156,1,1,162565,1
+Default (shipped),SAF,"SAF,295,29,1,None,None,None",1,1,295,295,1,1,162565,1
+Default (shipped),SAF,"SAF,250,5,1,None,None,None",1,1,250,250,1,1,162565,1
+Default (shipped),SAF,"SAF,289,23,1,None,None,None",1,1,289,289,1,1,162565,1
+Default (shipped),SAF,"SAF,291,20,1,None,None,None",1,1,291,291,1,1,162569,1
+Default (shipped),SAF,"SAF,207,4,1,None,None,None",1,1,207,207,1,1,162569,1
+Default (shipped),SAF,"SAF,491,1,0,None,None,None",1,1,491,491,1,1,162569,1
+Default (shipped),SAF,"SAF,71,11,0,None,None,None",1,1,71,71,1,1,162569,1
+Default (shipped),SAF,"SAF,146,31,0,None,None,None",1,1,146,146,1,1,162569,1
+Default (shipped),SAF,"SAF,454,6,0,None,None,None",1,1,454,454,1,1,162565,1
+Default (shipped),SAF,"SAF,202,3,0,None,None,None",1,1,202,202,1,1,162569,1
+Default (shipped),SAF,"SAF,472,14,0,None,None,None",1,1,472,472,1,1,162565,1
+Default (shipped),SAF,"SAF,239,18,1,None,None,None",1,1,239,239,1,1,162569,1
+Default (shipped),SAF,"SAF,278,22,0,None,None,None",1,1,278,278,1,1,162565,1
+Default (shipped),SAF,"SAF,120,19,1,None,None,None",1,1,120,120,1,1,162565,1
+Default (shipped),TF,"TF,84,20,1,None,None,None",1,1,84,84,1,1,162569,1
+Default (shipped),TF,"TF,463,30,1,None,None,None",1,1,463,463,1,1,162569,1
+Default (shipped),TF,"TF,445,28,0,None,None,None",1,1,445,445,1,1,162569,1
+Default (shipped),TF,"TF,387,17,1,None,None,None",1,1,387,387,1,1,162569,1
+Default (shipped),TF,"TF,72,7,1,None,None,None",1,1,72,72,1,1,162569,1
+Default (shipped),TF,"TF,199,24,0,None,None,None",1,1,199,199,1,1,162569,1
+Default (shipped),TF,"TF,430,16,0,None,None,None",1,1,430,430,1,1,162569,1
+Default (shipped),TF,"TF,147,4,0,None,None,None",1,1,147,147,1,1,162569,1
+Default (shipped),TF,"TF,230,3,1,None,None,None",1,1,230,230,1,1,162569,1
+Default (shipped),TF,"TF,81,31,1,None,None,None",1,1,81,81,1,1,162569,1
+Default (shipped),TF,"TF,446,31,0,None,None,None",1,1,446,446,1,1,162569,1
+Default (shipped),TF,"TF,256,3,1,None,None,None",1,1,256,256,1,1,162569,1
+Default (shipped),TF,"TF,431,5,1,None,None,None",1,1,431,431,1,1,162569,1
+Default (shipped),TF,"TF,347,5,0,None,None,None",1,1,347,347,1,1,162569,1
+Default (shipped),TF,"TF,118,28,1,None,None,None",1,1,118,118,1,1,162569,1
+Default (shipped),TF,"TF,28,21,1,None,None,None",1,1,28,28,1,1,162569,1
+Default (shipped),TF,"TF,222,22,0,None,None,None",1,1,222,222,1,1,162569,1
+Default (shipped),TF,"TF,159,1,1,None,None,None",1,1,159,159,1,1,162569,1
+Default (shipped),TF,"TF,316,19,1,None,None,None",1,1,316,316,1,1,162569,1
+Default (shipped),TF,"TF,457,24,0,None,None,None",1,1,457,457,1,1,162569,1
+Default (shipped),TF,"TF,457,22,1,None,None,None",1,1,457,457,1,1,162569,1
+Default (shipped),TF,"TF,465,0,0,None,None,None",1,1,465,465,1,1,162569,1
+Default (shipped),TF,"TF,128,15,1,None,None,None",1,1,128,128,1,1,162569,1
+Default (shipped),TF,"TF,504,21,1,None,None,None",1,1,504,504,1,1,162569,1
+Default (shipped),TF,"TF,467,15,1,None,None,None",1,1,467,467,1,1,162569,1
+Default (shipped),TF,"TF,309,22,0,None,None,None",1,1,309,309,1,1,162569,1
+Default (shipped),TF,"TF,251,20,0,None,None,None",1,1,251,251,1,1,162569,1
+Default (shipped),TF,"TF,174,3,0,None,None,None",1,1,174,174,1,1,162569,1
+Default (shipped),TF,"TF,328,6,1,None,None,None",1,1,328,328,1,1,162569,1
+Default (shipped),TF,"TF,50,20,1,None,None,None",1,1,50,50,1,1,162569,1
+Default (shipped),TF,"TF,171,8,1,None,None,None",1,1,171,171,1,1,162569,1
+Default (shipped),TF,"TF,234,30,0,None,None,None",1,1,234,234,1,1,162569,1
+Default (shipped),TF,"TF,201,0,0,None,None,None",1,1,201,201,1,1,162569,1
+Default (shipped),TF,"TF,400,9,1,None,None,None",1,1,400,400,1,1,162569,1
+Default (shipped),TF,"TF,429,10,0,None,None,None",1,1,429,429,1,1,162569,1
+Default (shipped),TF,"TF,296,20,1,None,None,None",1,1,296,296,1,1,162569,1
+Default (shipped),TF,"TF,207,14,0,None,None,None",1,1,207,207,1,1,162569,1
+Default (shipped),TF,"TF,271,29,0,None,None,None",1,1,271,271,1,1,162569,1
+Default (shipped),TF,"TF,425,21,1,None,None,None",1,1,425,425,1,1,162569,1
+Default (shipped),TF,"TF,443,26,0,None,None,None",1,1,443,443,1,1,162569,1
+Default (shipped),TF,"TF,139,21,0,None,None,None",1,1,139,139,1,1,162569,1
+Default (shipped),TF,"TF,389,17,1,None,None,None",1,1,389,389,1,1,162569,1
+Default (shipped),TF,"TF,469,13,0,None,None,None",1,1,469,469,1,1,162569,1
+Default (shipped),TF,"TF,95,3,1,None,None,None",1,1,95,95,1,1,162569,1
+Default (shipped),TF,"TF,34,16,0,None,None,None",1,1,34,34,1,1,162569,1
+Default (shipped),TF,"TF,164,10,0,None,None,None",1,1,164,164,1,1,162569,1
+Default (shipped),TF,"TF,381,4,1,None,None,None",1,1,381,381,1,1,162569,1
+Default (shipped),TF,"TF,274,10,0,None,None,None",1,1,274,274,1,1,162569,1
+Default (shipped),CF inter-word,"CF,189,26,1,188,26,0",1,1,189,189,1,1,162565,1
+Default (shipped),CF inter-word,"CF,191,9,1,190,9,1",1,1,191,191,1,1,162565,1
+Default (shipped),CF inter-word,"CF,471,29,0,472,29,1",1,1,471,471,1,1,162565,1
+Default (shipped),CF inter-word,"CF,36,27,1,37,27,0",1,1,36,36,1,1,162565,1
+Default (shipped),CF inter-word,"CF,341,1,1,342,1,1",1,1,341,341,1,1,162565,1
+Default (shipped),CF inter-word,"CF,461,10,0,460,10,1",1,1,461,461,1,1,162565,1
+Default (shipped),CF inter-word,"CF,228,1,1,229,1,1",1,1,228,228,1,1,162565,1
+Default (shipped),CF inter-word,"CF,306,16,1,307,16,1",1,1,306,306,1,1,162565,1
+Default (shipped),CF inter-word,"CF,208,7,1,207,7,1",1,1,208,208,1,1,162565,1
+Default (shipped),CF inter-word,"CF,467,30,1,468,30,0",1,1,467,467,1,1,162565,1
+Default (shipped),CF inter-word,"CF,110,14,1,109,14,0",1,1,110,110,1,1,162565,1
+Default (shipped),CF inter-word,"CF,357,25,1,358,25,1",1,1,357,357,1,1,162565,1
+Default (shipped),CF inter-word,"CF,131,11,1,132,11,0",1,1,131,131,1,1,162565,1
+Default (shipped),CF inter-word,"CF,156,14,0,157,14,1",1,1,156,156,1,1,162565,1
+Default (shipped),CF inter-word,"CF,473,18,1,472,18,0",1,1,473,473,1,1,162565,1
+Default (shipped),CF inter-word,"CF,490,9,0,491,9,0",1,1,490,490,1,1,162565,1
+Default (shipped),CF inter-word,"CF,406,13,1,407,13,0",1,1,406,406,1,1,162565,1
+Default (shipped),CF inter-word,"CF,315,18,1,316,18,1",1,1,315,315,1,1,162565,1
+Default (shipped),CF inter-word,"CF,381,30,1,380,30,1",1,1,381,381,1,1,162565,1
+Default (shipped),CF inter-word,"CF,181,21,1,182,21,1",1,1,181,181,1,1,162565,1
+Default (shipped),CF inter-word,"CF,50,8,0,51,8,0",1,1,50,50,1,1,162565,1
+Default (shipped),CF inter-word,"CF,293,4,1,292,4,1",1,1,293,293,1,1,162565,1
+Default (shipped),CF inter-word,"CF,111,15,1,112,15,1",1,1,111,111,1,1,162565,1
+Default (shipped),CF inter-word,"CF,437,11,1,436,11,1",1,1,437,437,1,1,162565,1
+Default (shipped),CF inter-word,"CF,83,13,0,84,13,0",1,1,83,83,1,1,162565,1
+Default (shipped),CF inter-word,"CF,134,3,0,133,3,1",1,1,134,134,1,1,162565,1
+Default (shipped),CF inter-word,"CF,434,25,1,435,25,1",1,1,434,434,1,1,162565,1
+Default (shipped),CF inter-word,"CF,166,23,1,167,23,0",1,1,166,166,1,1,162565,1
+Default (shipped),CF inter-word,"CF,472,30,1,471,30,0",1,1,472,472,1,1,162565,1
+Default (shipped),CF inter-word,"CF,344,10,0,345,10,0",1,1,344,344,1,1,162565,1
+Default (shipped),CF inter-word,"CF,32,5,1,31,5,1",1,1,32,32,1,1,162565,1
+Default (shipped),CF inter-word,"CF,184,9,1,183,9,0",1,1,184,184,1,1,162565,1
+Default (shipped),CF inter-word,"CF,482,8,1,481,8,1",1,1,482,482,1,1,162565,1
+Default (shipped),CF inter-word,"CF,453,3,0,454,3,0",1,1,453,453,1,1,162565,1
+Default (shipped),CF inter-word,"CF,4,28,0,5,28,0",1,1,4,4,1,1,162565,1
+Default (shipped),CF inter-word,"CF,349,10,0,350,10,0",1,1,349,349,1,1,162565,1
+Default (shipped),CF inter-word,"CF,503,27,1,504,27,0",1,1,503,503,1,1,162565,1
+Default (shipped),CF inter-word,"CF,62,11,1,63,11,1",1,1,62,62,1,1,162565,1
+Default (shipped),CF inter-word,"CF,388,6,0,389,6,0",1,1,388,388,1,1,162565,1
+Default (shipped),CF inter-word,"CF,125,16,0,126,16,1",1,1,125,125,1,1,162565,1
+Default (shipped),CF inter-word,"CF,145,4,0,146,4,0",1,1,145,145,1,1,162565,1
+Default (shipped),CF inter-word,"CF,375,31,0,376,31,0",1,1,375,375,1,1,162565,1
+Default (shipped),CF inter-word,"CF,469,12,0,468,12,1",1,1,469,469,1,1,162565,1
+Default (shipped),CF inter-word,"CF,189,11,0,188,11,1",1,1,189,189,1,1,162565,1
+Default (shipped),CF inter-word,"CF,222,8,0,223,8,0",1,1,222,222,1,1,162565,1
+Default (shipped),CF inter-word,"CF,70,2,1,71,2,0",1,1,70,70,1,1,162565,1
+Default (shipped),CF inter-word,"CF,247,21,1,246,21,0",1,1,247,247,1,1,162565,1
+Default (shipped),CF inter-word,"CF,372,29,1,371,29,1",1,1,372,372,1,1,162565,1
+Default (shipped),CF inter-word,"CF,306,10,1,305,10,1",1,1,306,306,1,1,162565,1
+Default (shipped),CF inter-word,"CF,226,25,1,227,25,0",1,1,226,226,1,1,162565,1
+Default (shipped),CF inter-word,"CF,74,17,0,73,17,0",1,1,74,74,1,1,162565,1
+Default (shipped),CF inter-word,"CF,40,27,0,41,27,0",1,1,40,40,1,1,162565,1
+Default (shipped),CF inter-word,"CF,36,13,0,37,13,1",1,1,36,36,1,1,162565,1
+Default (shipped),CF inter-word,"CF,424,24,1,423,24,1",1,1,424,424,1,1,162565,1
+Default (shipped),CF inter-word,"CF,10,1,0,9,1,0",1,1,10,10,1,1,162565,1
+Default (shipped),CF inter-word,"CF,488,6,1,489,6,0",1,1,488,488,1,1,162565,1
+Default (shipped),CF inter-word,"CF,265,26,0,266,26,0",1,1,265,265,1,1,162565,1
+Default (shipped),CF inter-word,"CF,363,6,0,364,6,0",1,1,363,363,1,1,162565,1
+Default (shipped),CF inter-word,"CF,66,31,1,67,31,1",1,1,66,66,1,1,162565,1
+Default (shipped),CF inter-word,"CF,401,9,1,402,9,1",1,1,401,401,1,1,162565,1
+Default (shipped),CF inter-word,"CF,165,23,0,166,23,0",1,1,165,165,1,1,162565,1
+Default (shipped),CF inter-word,"CF,278,31,1,279,31,0",1,1,278,278,1,1,162565,1
+Default (shipped),CF inter-word,"CF,159,28,0,160,28,0",1,1,159,159,1,1,162565,1
+Default (shipped),CF inter-word,"CF,189,24,1,188,24,1",1,1,189,189,1,1,162565,1
+Default (shipped),CF intra-word,"CF,324,16,0,324,17,0",1,1,324,324,1,1,162569,1
+Default (shipped),CF intra-word,"CF,102,4,1,102,5,0",1,1,102,102,1,1,162569,1
+Default (shipped),CF intra-word,"CF,336,19,0,336,18,1",1,1,336,336,1,1,162569,1
+Default (shipped),CF intra-word,"CF,381,8,0,381,9,1",1,1,381,381,1,1,162569,1
+Default (shipped),CF intra-word,"CF,9,0,0,9,1,0",1,1,9,9,1,1,162569,1
+Default (shipped),CF intra-word,"CF,393,12,1,393,13,0",1,1,393,393,1,1,162569,1
+Default (shipped),CF intra-word,"CF,348,17,0,348,16,0",1,1,348,348,1,1,162569,1
+Default (shipped),CF intra-word,"CF,53,16,0,53,17,0",1,1,53,53,1,1,162569,1
+Default (shipped),CF intra-word,"CF,454,14,0,454,15,0",1,1,454,454,1,1,162569,1
+Default (shipped),CF intra-word,"CF,218,18,0,218,19,0",1,1,218,218,1,1,162569,1
+Default (shipped),CF intra-word,"CF,74,0,1,74,1,0",1,1,74,74,1,1,162569,1
+Default (shipped),CF intra-word,"CF,67,0,1,67,1,0",1,1,67,67,1,1,162569,1
+Default (shipped),CF intra-word,"CF,486,5,1,486,4,0",1,1,486,486,1,1,162569,1
+Default (shipped),CF intra-word,"CF,274,13,1,274,12,0",1,1,274,274,1,1,162569,1
+Default (shipped),CF intra-word,"CF,199,10,0,199,11,0",1,1,199,199,1,1,162569,1
+Default (shipped),CF intra-word,"CF,269,10,0,269,11,1",1,1,269,269,1,1,162569,1
+Default (shipped),CF intra-word,"CF,391,11,0,391,10,1",1,1,391,391,1,1,162569,1
+Default (shipped),CF intra-word,"CF,445,10,0,445,11,0",1,1,445,445,1,1,162569,1
+Default (shipped),CF intra-word,"CF,215,7,0,215,6,1",1,1,215,215,1,1,162569,1
+Default (shipped),CF intra-word,"CF,281,31,0,281,30,1",1,1,281,281,1,1,162569,1
+Default (shipped),CF intra-word,"CF,121,30,1,121,31,0",1,1,121,121,1,1,162569,1
+Default (shipped),CF intra-word,"CF,117,24,0,117,25,1",1,1,117,117,1,1,162569,1
+Default (shipped),CF intra-word,"CF,130,7,1,130,6,1",1,1,130,130,1,1,162569,1
+Default (shipped),CF intra-word,"CF,317,15,1,317,14,1",1,1,317,317,1,1,162569,1
+Default (shipped),CF intra-word,"CF,252,22,1,252,23,1",1,1,252,252,1,1,162569,1
+Default (shipped),CF intra-word,"CF,306,29,1,306,28,1",1,1,306,306,1,1,162569,1
+Default (shipped),CF intra-word,"CF,101,13,1,101,12,1",1,1,101,101,1,1,162569,1
+Default (shipped),CF intra-word,"CF,181,16,1,181,17,1",1,1,181,181,1,1,162569,1
+Default (shipped),CF intra-word,"CF,37,23,1,37,22,1",1,1,37,37,1,1,162569,1
+Default (shipped),CF intra-word,"CF,234,16,0,234,17,1",1,1,234,234,1,1,162569,1
+Default (shipped),CF intra-word,"CF,265,4,0,265,5,0",1,1,265,265,1,1,162569,1
+Default (shipped),CF intra-word,"CF,205,23,0,205,22,1",1,1,205,205,1,1,162569,1
+Default (shipped),CF intra-word,"CF,339,27,0,339,26,1",1,1,339,339,1,1,162569,1
+Default (shipped),CF intra-word,"CF,489,14,1,489,15,1",1,1,489,489,1,1,162569,1
+Default (shipped),CF intra-word,"CF,166,14,0,166,15,0",1,1,166,166,1,1,162569,1
+Default (shipped),CF intra-word,"CF,397,9,0,397,8,1",1,1,397,397,1,1,162569,1
+Default (shipped),CF intra-word,"CF,318,21,1,318,20,0",1,1,318,318,1,1,162569,1
+Default (shipped),CF intra-word,"CF,89,30,0,89,31,1",1,1,89,89,1,1,162569,1
+Default (shipped),CF intra-word,"CF,395,20,0,395,21,1",1,1,395,395,1,1,162569,1
+Default (shipped),CF intra-word,"CF,12,0,0,12,1,0",1,1,12,12,1,1,162569,1
+Default (shipped),CF intra-word,"CF,136,26,0,136,27,0",1,1,136,136,1,1,162569,1
+Default (shipped),CF intra-word,"CF,336,16,0,336,17,0",1,1,336,336,1,1,162569,1
+Default (shipped),CF intra-word,"CF,423,8,1,423,9,0",1,1,423,423,1,1,162569,1
+Default (shipped),CF intra-word,"CF,53,1,1,53,0,1",1,1,53,53,1,1,162569,1
+Default (shipped),CF intra-word,"CF,309,15,0,309,14,0",1,1,309,309,1,1,162569,1
+Default (shipped),CF intra-word,"CF,235,3,0,235,2,1",1,1,235,235,1,1,162569,1
+Default (shipped),CF intra-word,"CF,379,29,0,379,28,1",1,1,379,379,1,1,162569,1
+Default (shipped),CF intra-word,"CF,180,17,1,180,16,1",1,1,180,180,1,1,162569,1

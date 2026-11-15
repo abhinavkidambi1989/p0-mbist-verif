@@ -1,0 +1,36 @@
+RTL runs 1288, match golden 1288, mismatches 0, upper 95% bound 0.30%
+MATS+: detect 118/184 = 64.1% [57.0-70.7], median cycles 24389
+March X: detect 133/184 = 72.3% [65.4-78.2], median cycles 32517
+March Y: detect 133/184 = 72.3% [65.4-78.2], median cycles 32517
+March C-: detect 160/184 = 87.0% [81.3-91.1], median cycles 48773
+March LR: detect 160/184 = 87.0% [81.3-91.1], median cycles 48773
+March C-, 4 bg.: detect 184/184 = 100.0% [98.0-100.0], median cycles 97541
+Default (shipped): detect 184/184 = 100.0% [98.0-100.0], median cycles 162569
+  SAF / MATS+: 24/24
+  SAF / March X: 24/24
+  SAF / March Y: 24/24
+  SAF / March C-: 24/24
+  SAF / March LR: 24/24
+  SAF / March C-, 4 bg.: 24/24
+  SAF / Default (shipped): 24/24
+  TF / MATS+: 48/48
+  TF / March X: 48/48
+  TF / March Y: 48/48
+  TF / March C-: 48/48
+  TF / March LR: 48/48
+  TF / March C-, 4 bg.: 48/48
+  TF / Default (shipped): 48/48
+  CF inter-word / MATS+: 31/64
+  CF inter-word / March X: 37/64
+  CF inter-word / March Y: 37/64
+  CF inter-word / March C-: 64/64
+  CF inter-word / March LR: 64/64
+  CF inter-word / March C-, 4 bg.: 64/64
+  CF inter-word / Default (shipped): 64/64
+  CF intra-word / MATS+: 15/48
+  CF intra-word / March X: 24/48
+  CF intra-word / March Y: 24/48
+  CF intra-word / March C-: 24/48
+  CF intra-word / March LR: 24/48
+  CF intra-word / March C-, 4 bg.: 48/48
+  CF intra-word / Default (shipped): 48/48

@@ -55,6 +55,15 @@ module tb_mbist_ctrl;
     if (nf > 7) begin t=0; void'($value$plusargs("K7=%d",t)); k[7]=t; t=0; void'($value$plusargs("A7=%d",t)); a[7]=t; t=0; void'($value$plusargs("B7=%d",t)); b[7]=t; t=0; void'($value$plusargs("V7=%d",t)); v[7]=t; end
   end
 
+  integer cf_on = 0, ca = 0, cb = 0, caa = 0, cab = 0, ct = 1, cv = 0;
+  reg cfprev = 1'bx;
+  initial begin
+    if ($value$plusargs("CA=%d", ca)) cf_on = 1;
+    void'($value$plusargs("CB=%d", cb));  void'($value$plusargs("CAA=%d", caa));
+    void'($value$plusargs("CAB=%d", cab)); void'($value$plusargs("CT=%d", ct));
+    void'($value$plusargs("CV=%d", cv));
+  end
+
   integer j;
   reg cur;
   always @(negedge mem_clk_b or posedge mem_clk_b) begin
@@ -68,7 +77,16 @@ module tb_mbist_ctrl;
       end
       prev[j] = sram.mem[a[j]][b[j]];
     end
+    // optional idempotent coupling fault: when aggressor (CAA,CAB) makes transition CT
+    // (1 = up, 0 = down), victim (CA,CB) is forced to CV
+    if (cf_on) begin
+      cur = sram.mem[caa][cab];
+      if ((ct == 1 && cfprev === 1'b0 && cur === 1'b1) || (ct == 0 && cfprev === 1'b1 && cur === 1'b0))
+        sram.mem[ca][cb] = cv[0];
+      cfprev = sram.mem[caa][cab];
+    end
   end
+
 
 
   // ---------------- optional waveform dump (+VCD=<file>) ----------------

@@ -35,8 +35,10 @@ exposes no bug and a pass/fail check exposes only 2.8\% of detectable faults (72
 address and repair entry is wrong and the faulty cell is repaired in only 1.6\% of failing runs.
 On a second open-source MBIST with row-redundancy repair the same scoreboard raises no false
 alarm in 1{,}694 runs (95\% upper bound 0.23\%). Across 34 seeded bugs, completion-only checking
-kills 15\%, pass/fail checking 62\% and the full scoreboard 79\%. The flow uses only open-source
-tools and runs in seconds to minutes.
+kills 15\%, pass/fail checking 62\% and the full scoreboard 79\%. Reprogramming the second
+controller with six alternative March algorithms, its repair outputs match the golden model in all
+1{,}288 runs, while fault coverage on the RTL ranges from 64\% (MATS+) to 100\% (March C-- with four
+data backgrounds). The flow uses only open-source tools and runs in seconds to minutes.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -64,7 +66,9 @@ case study on a taped-out MBIST/BISR design in which the method finds escapes, w
 addresses and a broken repair table that the design's own testbench misses, with register-level
 root causes (Sections~\ref{sec:resA}--\ref{sec:root}); (d) a control study on a second design in
 which the same scoreboard raises no false alarm, and a seeded-bug qualification of all checker
-levels on both designs (Sections~\ref{sec:resB}--\ref{sec:mut}); and (e) design recommendations
+levels on both designs (Sections~\ref{sec:resB}--\ref{sec:mut}); (e) the same check applied to
+seven March algorithms loaded into one controller, verifying its algorithm encoding and measuring
+each algorithm's coverage on the RTL (Section~\ref{sec:alg}); and (f) design recommendations
 for MBIST/BISR logic (Section~\ref{sec:disc}).
 
 \section{Background and Related Work}
@@ -130,9 +134,9 @@ The golden model simulates a $D\times W$ memory at the operation level. An algor
 background and `1' its complement. Each read compares the whole word; a mismatching read appends
 its address to the expected fail list. The expected repair table is the first $R$ distinct failing
 addresses in detection order. Spare words are assumed fault-free and outside the tested range,
-the documented intent of both designs. The model reproduces March theory on our fault list
-(Fig.~\ref{fig:alg}): MATS+ detects 50\% of TFs, March X and March Y 50\% of inter-word CFs,
-March C-- all of them, and four data backgrounds all intra-word CFs.
+the documented intent of both designs. On Design~A's fault list the model reproduces March theory:
+single-pass MATS+ detects 50\% of TFs, March X and March Y 50\% of inter-word CFs, March C-- all
+of them, and four data backgrounds all intra-word CFs (RTL results in Section~\ref{sec:alg}).
 
 \subsection{Fault injection}
 Faults are injected into the RTL memory array without editing the design. A correction is applied
@@ -376,17 +380,36 @@ B15 & No abort on unrepairable error & Same final outputs \\
 \end{tabular}
 \end{table}
 
-\subsection{Algorithm adequacy}
-Independently of the RTL, the golden model compares algorithms on the same fault list
-(Fig.~\ref{fig:alg}). Design~A's March X detects 50\% of inter-word CFs where March C-- detects
-100\%; with solid data both detect 50\% of intra-word CFs. Design~B's default algorithm and March
-C-- with four backgrounds detect all four classes.
+\subsection{Algorithm programming and adequacy on the RTL}
+\label{sec:alg}
+Design~B's March elements are compile-time parameters: each element is a 15-bit word (direction,
+an address-reverse bit, and four operation slots of write/read/invert), and the scan chain only
+selects among them. We encoded MATS+, March X, March Y, March C-- and March LR
+\cite{vandegoor1996} in this format, plus March C-- with four data backgrounds, rebuilt the RTL for
+each, and ran the same 184 faults (24 SAF, 48 TF, 64 inter-word and 48 intra-word idempotent CFs)
+on every build, with the golden model running the same algorithm. The controller needs at least
+two backgrounds, so solid-data algorithms run twice; the second pass reads the final
+writes of the first, so MATS+ also catches the falling transitions its single pass misses. The memory write and read counts of each
+build equal the algorithm's length, and all 1{,}288 runs match the golden model at the repair level
+(DONE, ERROR, CORRECT, count and repair table; 0 mismatches, 95\% upper bound 0.30\%), so the
+encoding, the reverse-direction logic and the repair path behave as specified for every algorithm.
+March SS cannot be encoded, because its elements have five operations and the controller holds four.
+
+Fig.~\ref{fig:algrtl} shows what the RTL then detects. All algorithms catch every SAF and TF.
+Inter-word CFs separate them: MATS+ detects 48\%, March X and Y 58\%, and March C-- and LR 100\%.
+With solid data, at most half of the intra-word CFs (between bits of one word) are detected, since
+both bits always hold the same value; four backgrounds raise this to 100\%, as does the shipped
+configuration, which costs 1.7$\times$ more cycles than March C-- with four backgrounds. The same
+holds in the golden model for Design~A's $32\times8$ memory, where its March X detects 50\% of
+inter-word CFs against 100\% for March C--.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_algorithms.pdf}
-\caption{Golden-model coverage of March algorithms on a $32\times8$ memory (same fault list as Table~\ref{tab:summary}); operations per word in parentheses.}
-\label{fig:alg}
+\includegraphics[width=\columnwidth]{fig_alg_rtl.pdf}
+\caption{Fault coverage measured on Design~B's RTL for each March algorithm loaded into the
+controller (184 faults per algorithm; median test length in clock cycles). Every run agreed with
+the golden model.}
+\label{fig:algrtl}
 \end{figure}
 
 \section{Discussion}
@@ -407,8 +430,9 @@ behavioural; for Design~A they are single faults, so multi-fault repair (B4) was
 directed tests, while Design~B was run with up to six faulty words. The golden models encode an
 interpretation of each design's intent (spares outside the tested range, repair of the first $R$
 distinct addresses). Design~B's seeded-bug test set is small (seven tests); adding intra-word CFs
-would expose B14. Open questions are a chip-level run with several MBIST instances behind one bus
-and formal equivalence between the golden model and the controller's algorithm encoding.
+would expose B14. Algorithm reprogramming was checked by simulation on one fault sample per
+algorithm, not proven. Open questions are a chip-level run with several MBIST instances behind one
+bus and formal equivalence between the golden model and the controller's algorithm encoding.
 
 \section{Conclusion}
 Checking only completion and the pass/fail flag gives false confidence in MBIST and repair logic.
