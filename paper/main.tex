@@ -225,7 +225,7 @@ statistics and plots.
 \subsection{Design A: detection and escapes}
 \label{sec:resA}
 The golden model predicts that March X detects 2{,}528 of the 4{,}032 faults; the DUT raises FAIL
-in 2{,}456 (Table~\ref{tab:summary}, Fig.~\ref{fig:detect}). All 72 differences are escapes, a
+in 2{,}456 (Table~\ref{tab:summary}). All 72 differences are escapes, a
 faulty memory that passes (2.85\%, 95\% CI 2.27--3.57\%); there are no false fails. Every escape
 sits at address 0 or 31 (Fig.~\ref{fig:escmap}), the last address of the $\Downarrow(r1,w0)$
 element and of the final $\Uparrow(r0)$ element.
@@ -249,13 +249,6 @@ Total          & 4{,}032 & 2{,}528 & 2{,}456 & 72 & 0 \\
 \end{tabular}
 \\[2pt]\footnotesize $^\ast$Detected runs whose fail addresses and repair table both match the golden model.
 \end{table}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{fig_detection.pdf}
-\caption{Fault detection by class: full March C-- and the implemented March X (golden model) versus Design A's FAIL flag.}
-\label{fig:detect}
-\end{figure}
 
 \begin{figure}[t]
 \centering
