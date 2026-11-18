@@ -99,7 +99,7 @@ def fault_sample():
 
 
 def simulate(vvp, f):
-    args = ["vvp", "-n", str(vvp), "+MAXC=2000000"]
+    args = ["vvp", "-n", str(vvp), "+MAXC=40000000"]
     if f.kind == "CF":
         args += [f"+CA={f.a}", f"+CB={f.b}", f"+CAA={f.aa}", f"+CAB={f.ab}", f"+CT={f.t}", f"+CV={f.v}"]
     else:

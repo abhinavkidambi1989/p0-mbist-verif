@@ -38,8 +38,8 @@ alarm in 1{,}694 runs (95\% upper bound 0.23\%). Across 34 seeded bugs, completi
 kills 15\%, pass/fail checking 62\% and the full scoreboard 82\%. Reprogramming the second
 controller with six alternative March algorithms, its repair outputs match the golden model in all
 1{,}288 runs, while fault coverage on the RTL ranges from 64\% (MATS+) to 100\% (March C-- with four
-data backgrounds). At chip level, all eight instances match in 320 of 320 results, and every
-repaired word reads back correctly. All designs, tools and scripts are open source.
+data backgrounds). At chip level, all eight instances match in 320 of 320 results, every
+repaired word reads back correctly, and the check scales linearly to 16{,}384-word memories. All designs, tools and scripts are open source.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -180,7 +180,8 @@ as March C--, the controller implements March X,
 $\{\Uparrow(w0);\Uparrow(r0,w1);\Downarrow(r1,w0);\Uparrow(r0)\}$.
 
 \textbf{Design B} (Fig.~\ref{fig:arch}b) is mbist\_ctrl \cite{mbistctrl} (Apache-2.0), taped out
-on an Efabless/SkyWater shuttle. It tests a $512\times32$ two-port SRAM with a programmable
+on the Efabless/SkyWater 130\,nm shuttles MPW-3 to MPW-5. As in an industrial deployment, its chip
+places one controller per memory and reports all of them through a shared register block. It tests a $512\times32$ two-port SRAM with a programmable
 controller; by default eight data backgrounds $\times$ five March elements with read-after-write
 in both directions, over words 0x000--0x1FB, with four spare words 0x1FC--0x1FF and an error limit
 of four. We simulate the MBIST core with the SkyWater SRAM behavioural model wired as on the chip,
@@ -429,6 +430,13 @@ in another, and all 265 repaired words read back correctly. In a directed run wi
 the repair table holds the failing address twice (Section~\ref{sec:resB}) and the readback is
 still clean, because the second entry maps the word to a good spare.
 
+\textit{Scaling.} The controller's memory size is a parameter, so we rebuilt the same RTL for
+512 to 16{,}384 words ($\times32$ bits, 64\,KB at the top) and ran 12 fault scenarios per size,
+including boundary words and an unrepairable five-word set. All 72 runs match the golden model.
+Test length grows linearly at 320 cycles per word, and simulation at 3.8\,ms per word, so a
+16K-word memory takes 62\,s per run; the golden model stays about 17$\times$ faster than the
+simulation, so it never limits the campaign.
+
 \section{Discussion}
 \label{sec:disc}
 \subsection{Recommendations for MBIST/BISR Designers}
@@ -450,7 +458,7 @@ interpretation of each design's intent (spares outside the tested range, repair 
 distinct addresses). The seeded bugs are hand-written, 34 in total, so their rates carry wide
 intervals. Algorithm reprogramming was checked by simulation on one fault sample per
 algorithm, not proven. The chip-level run replaces the host bridge with direct bus drivers.
-Open questions are industrial-scale memories and formal equivalence between the golden model and the controller's algorithm encoding.
+Open questions are commercial controllers and formal equivalence between the golden model and the controller's algorithm encoding.
 
 \section{Conclusion}
 Checking only completion and the pass/fail flag gives false confidence in MBIST and repair logic.

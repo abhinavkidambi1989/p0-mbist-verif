@@ -9,30 +9,38 @@
 // Corrections are applied 2 ns after each edge of the write clock (writes land on its negedge).
 // Output: RESULT lines with DONE/ERROR/CORRECT/error count and the port-A repair table.
 `timescale 1ns/100ps
+// Memory size: +define+AW=<address bits> (default 9 = 512 words, as on the chip). User words
+// 0 .. 2^AW-5, spares 2^AW-4 .. 2^AW-1, exactly as the chip's 512-word configuration.
+`ifndef AW
+`define AW 9
+`endif
 module tb_mbist_ctrl;
+  localparam AW = `AW;
+  localparam [AW-1:0] LAST_USER = (1 << AW) - 5, SPARE0 = (1 << AW) - 4;
   reg clk = 0, rst_n = 0;
   always #12.5 clk = ~clk;  // 40 MHz, as in the design's own test
 
   wire       bist_done, bist_error, bist_correct, bist_sdo;
   wire [3:0] bist_error_cnt;
   wire       mem_clk_a, mem_cen_a, mem_clk_b, mem_cen_b, mem_web_b;
-  wire [8:0] mem_addr_a, mem_addr_b;
+  wire [AW-1:0] mem_addr_a, mem_addr_b;
   wire [31:0] mem_din_b, mem_dout_a, wb_dat_o;
   wire [3:0] mem_mask_b;
   wire       wb_ack_o, wb_err_o, wbd_clk_mbist;
 
-  mbist_top1 dut (
+  mbist_top1 #(.BIST_ADDR_WD(AW), .BIST_ADDR_START({AW{1'b0}}), .BIST_ADDR_END(LAST_USER),
+               .BIST_REPAIR_ADDR_START(SPARE0)) dut (
     .wbd_clk_int(clk), .wbd_clk_mbist(wbd_clk_mbist), .cfg_cska_mbist(4'h0),
     .rst_n(rst_n), .bist_en(1'b1), .bist_run(1'b1), .bist_shift(1'b0), .bist_load(1'b0), .bist_sdi(1'b0),
     .bist_error_cnt(bist_error_cnt), .bist_correct(bist_correct), .bist_error(bist_error),
     .bist_done(bist_done), .bist_sdo(bist_sdo),
-    .wb_clk_i(clk), .wb_cyc_i(1'b0), .wb_stb_i(1'b0), .wb_adr_i(9'h0), .wb_we_i(1'b0),
+    .wb_clk_i(clk), .wb_cyc_i(1'b0), .wb_stb_i(1'b0), .wb_adr_i({AW{1'b0}}), .wb_we_i(1'b0),
     .wb_dat_i(32'h0), .wb_sel_i(4'h0), .wb_dat_o(wb_dat_o), .wb_ack_o(wb_ack_o), .wb_err_o(wb_err_o),
     .mem_clk_a(mem_clk_a), .mem_addr_a(mem_addr_a), .mem_cen_a(mem_cen_a), .mem_dout_a(mem_dout_a),
     .mem_clk_b(mem_clk_b), .mem_cen_b(mem_cen_b), .mem_web_b(mem_web_b), .mem_mask_b(mem_mask_b),
     .mem_addr_b(mem_addr_b), .mem_din_b(mem_din_b));
 
-  sky130_sram_2kbyte_1rw1r_32x512_8 sram (
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.ADDR_WIDTH(AW)) sram (
     .clk0(mem_clk_b), .csb0(mem_cen_b), .web0(mem_web_b), .wmask0(mem_mask_b),
     .addr0(mem_addr_b), .din0(mem_din_b), .dout0(),
     .clk1(mem_clk_a), .csb1(mem_cen_a), .addr1(mem_addr_a), .dout1(mem_dout_a));
@@ -90,13 +98,13 @@ module tb_mbist_ctrl;
 
 
   // ---------------- optional waveform dump (+VCD=<file>) ----------------
-  wire [8:0]  w_bist_addr = dut.bist_addr;
+  wire [AW-1:0] w_bist_addr = dut.bist_addr;
   wire        w_rd = dut.op_read, w_wr = dut.op_write, w_cmp = dut.u_cmp.compare;
   wire [31:0] w_exp = dut.u_cmp.exp_data, w_rxd = dut.u_cmp.rxd_data;
   wire        w_errcor = dut.bist_error_correct;
   wire [3:0]  w_repcnt = dut.u_mem_sel.u_repair_A.ErrorCnt;
-  wire [8:0]  w_rep0 = dut.u_mem_sel.u_repair_A.RepairMem[0];
-  wire [8:0]  w_mem_addr_a = mem_addr_a, w_mem_addr_b = mem_addr_b;
+  wire [AW-1:0] w_rep0 = dut.u_mem_sel.u_repair_A.RepairMem[0];
+  wire [AW-1:0] w_mem_addr_a = mem_addr_a, w_mem_addr_b = mem_addr_b;
   wire        w_cen_a = mem_cen_a, w_web_b = mem_web_b;
   reg  [8*64-1:0] vcdname;
   initial if ($value$plusargs("VCD=%s", vcdname)) begin $dumpfile(vcdname); $dumpvars(1, tb_mbist_ctrl); end
