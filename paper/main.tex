@@ -31,8 +31,8 @@ reference model under systematic memory fault injection, and qualifies the check
 seeded RTL bugs. On an open-source MBIST/BISR design taped out on a public shuttle, 4{,}032
 injected stuck-at, transition and coupling faults show that its completion-only testbench
 exposes no bug and a pass/fail check exposes only 2.8\% of detectable faults (72 escapes,
-95\% CI 2.3--3.6\%), whereas the full scoreboard exposes bugs in 100\% of them: every fail
-address and repair entry is wrong and the faulty cell is repaired in only 1.6\% of failing runs.
+95\% CI 2.3--3.6\%), whereas the full scoreboard exposes bugs in 100\% of them: only 10\% of
+fail reports carry the right address, and the faulty cell is repaired in only 1.6\% of failing runs.
 On a second open-source MBIST with row-redundancy repair the same scoreboard raises no false
 alarm in 1{,}694 runs (95\% upper bound 0.23\%). Across 34 seeded bugs, completion-only checking
 kills 15\%, pass/fail checking 62\% and the full scoreboard 82\%. Reprogramming the second
